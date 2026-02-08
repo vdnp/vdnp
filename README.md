@@ -3,7 +3,7 @@
 ### 🛠 Tech Stack & Tools
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,py,django,js,postgres,sqlite,linux,bash,git,expo,figma,postman&perline=6" />
+    <img src="https://skillicons.dev/icons?i=react,py,django,js,postgres,sqlite,git,expo,postman&perline=3" />
   </a>
 </p>
 
