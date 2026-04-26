@@ -1,38 +1,59 @@
-# Hi there, I'm vdnp 👋
+# Hi there, I'm Yiğit Enes Kaya 👋 
 
-### 🛠 Tech Stack & Tools
+### 🚀 Full-Stack Developer & Entrepreneurship Enthusiast
+I focus on building scalable mobile and web applications, with a current passion for **Fleet Management Systems** and **B2B2C business models**.
+
+---
+
+### 🛠 Tech Stack
+
+**Frontend & Mobile**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,py,django,js,postgres,sqlite,git,expo,postman&perline=3" />
+    <img src="https://skillicons.dev/icons?i=react,expo,js,html,css&perline=5" />
+  </a>
+</p>
+
+**Backend & Frameworks**
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,django,dotnet,cs&perline=4" />
+  </a>
+</p>
+
+**Database & Tools**
+<p align="left">
+  <a href="https://skillicons.dev)
+    <img src="https://skillicons.dev/icons?i=postgres,sqlite,git,postman,figma&perline=5" />
   </a>
 </p>
 
 ---
 
-### 📊 My GitHub Stats
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=vdnp&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=vdnp&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vdnp&layout=compact&theme=tokyonight&hide_border=true" />
-  <img width="48%" src="https://github-readme-activity-graph.vercel.app/graph?username=vdnp&theme=tokyonight&hide_border=true" />
-</p>
+### 🔭 Currently Working On
+* 🚗 **Fleet Management Platform:** Developing a B2B2C mobile solution using **React Native** & **Django**.
+* 🏛 **Academic Projects:** Crafting robust web systems with **ASP.NET Core MVC**.
+* 🧠 **Optimization:** Improving relational database structures and query performance.
 
 ---
 
-### 🔭 Currently Working On
-* 🚗 Developing a **Car Fleet Management** mobile application using **React Native & Expo**.
-* 🐍 Enhancing backend services with **Django**.
-* 📊 Optimizing relational database queries and structures.
+### 📊 My GitHub Stats
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=vdnp&show_icons=true&theme=tokyonight&hide_border=true" />
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=vdnp&theme=tokyonight&hide_border=true" />
+</p>
+
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vdnp&layout=compact&theme=tokyonight&hide_border=true" />
+  <img width="49%" src="https://github-readme-activity-graph.vercel.app/graph?username=vdnp&theme=tokyonight&hide_border=true" />
+</p>
 
 ---
 
 ### 🤝 Connect with me
 <p align="left">
-<a href="https://linkedin.com/in/yiğit-enes-kaaya" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a href="mailto:eneskaaya3@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://linkedin.com/in/yiğit-enes-kaaya" target="blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:eneskaaya3@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white" /></a>
 </p>
 
 ---
