@@ -1,0 +1,45 @@
+name: Dynamic README
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"   # every 3 hours, so the activity card's time-of-day palette actually cycles
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # No account/keys needed — regenerates activity-dark.svg / activity-light.svg
+      - name: Generate live activity card
+        run: python scripts/generate_activity_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Pulls your most-recently-pushed public repos — regenerates working-on-dark.svg / working-on-light.svg
+      - name: Generate "currently working on" card
+        run: python scripts/generate_projects_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Sums /languages across all public repos — regenerates langs-dark.svg / langs-light.svg
+      - name: Generate language breakdown card
+        run: python scripts/generate_languages_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh live activity, working-on & language cards"
+          file_pattern: "activity-dark.svg activity-light.svg working-on-dark.svg working-on-light.svg langs-dark.svg langs-light.svg"
