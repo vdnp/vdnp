@@ -33,21 +33,21 @@
   <text x="1138" y="38" text-anchor="end" font-size="12" fill="#94A3B8">🌆 AKŞAM</text>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.45s" begin="0.25s" fill="freeze"/>
     <circle cx="44" cy="82" r="4" fill="url(#accentGrad)"/>
-    <text x="60" y="88" font-size="16" font-weight="700" fill="#F8FAFC">FiloYonetimSistemiGelistirme</text>
-    <text x="60" y="108" font-size="13" fill="#94A3B8">React Native &amp; Django ile B2B2C mobil filo yönetim çözümü</text>
-    <text x="1136" y="88" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">TypeScript</text>
+    <text x="60" y="88" font-size="16" font-weight="700" fill="#F8FAFC">vdnp</text>
+    <text x="60" y="108" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
+    <text x="1136" y="88" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">Python  ·  12dk önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.45s" begin="0.50s" fill="freeze"/>
     <circle cx="44" cy="136" r="4" fill="url(#accentGrad)"/>
-    <text x="60" y="142" font-size="16" font-weight="700" fill="#F8FAFC">tablekit</text>
-    <text x="60" y="162" font-size="13" fill="#94A3B8">Akademik projeler için sağlam web sistemleri</text>
-    <text x="1136" y="142" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">TypeScript</text>
+    <text x="60" y="142" font-size="16" font-weight="700" fill="#F8FAFC">mini-katalog</text>
+    <text x="60" y="162" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
+    <text x="1136" y="142" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">Dart  ·  9g önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.45s" begin="0.75s" fill="freeze"/>
     <circle cx="44" cy="190" r="4" fill="url(#accentGrad)"/>
-    <text x="60" y="196" font-size="16" font-weight="700" fill="#F8FAFC">image-turbo</text>
-    <text x="60" y="216" font-size="13" fill="#94A3B8">İlişkisel veritabanı yapıları ve sorgu performansı üzerine çalışma</text>
-    <text x="1136" y="196" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">TypeScript</text>
+    <text x="60" y="196" font-size="16" font-weight="700" fill="#F8FAFC">Okuma-Takip</text>
+    <text x="60" y="216" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
+    <text x="1136" y="196" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">JavaScript  ·  12g önce</text>
   </g>
 </g>
 <rect x="1" y="1" width="1178" height="250" rx="23" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>

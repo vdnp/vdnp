@@ -170,8 +170,8 @@
 
   <line x1="40" y1="326" x2="1140" y2="326" stroke="#94A3B8" stroke-opacity="0.15"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.1s" fill="freeze"/>
-    <circle cx="47" cy="347" r="3" fill="#94A3B8"/>
-    <text x="60" y="350" font-size="13" fill="#94A3B8">🎧 Spotify henüz bağlanmadı</text>
+    <rect x="40" y="342" width="3" height="10" fill="url(#accentGrad)"><animate attributeName="height" values="6;16;6" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="345;337;345" dur="0.9s" repeatCount="indefinite"/></rect><rect x="45" y="342" width="3" height="10" fill="url(#accentGrad)"><animate attributeName="height" values="6;16;6" dur="0.7s" repeatCount="indefinite"/><animate attributeName="y" values="345;337;345" dur="0.7s" repeatCount="indefinite"/></rect><rect x="50" y="342" width="3" height="10" fill="url(#accentGrad)"><animate attributeName="height" values="6;16;6" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="345;337;345" dur="1.1s" repeatCount="indefinite"/></rect>
+    <text x="60" y="350" font-size="13" fill="#94A3B8">🎧 Son dinlediği: <tspan fill="#F8FAFC" font-weight="700">Dolmuş</tspan> — Malt</text>
   </g>
 </g>
 
