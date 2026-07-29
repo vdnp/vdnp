@@ -30,11 +30,14 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
 
-      # No account/keys needed — regenerates activity-dark.svg / activity-light.svg
+      # Regenerates activity-dark.svg / activity-light.svg. GH_PAT is optional:
+      # if set, private-repo pushes/PRs/issues show up too but with the repo
+      # name (and PR/issue title) masked as "gizli repo" — never the real name.
       - name: Generate live activity card
         run: python scripts/generate_activity_card.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 
       # Pulls your most-recently-pushed public repos — regenerates working-on-dark.svg / working-on-light.svg
       - name: Generate "currently working on" card
