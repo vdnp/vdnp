@@ -17,6 +17,24 @@ from pathlib import Path
 GITHUB_USERNAME = "vdnp"
 OUT_DIR = Path(__file__).resolve().parent.parent
 MAX_REPOS = 3
+LOCAL_UTC_OFFSET = 3  # Europe/Istanbul, no DST since 2016
+
+# Shared across every card so the whole profile shifts hue together.
+TIME_PALETTES = [
+    (0, 6, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+    (6, 11, "morning", "SABAH", "🌅", "#F97316", "#FBBF24", "#EC4899"),
+    (11, 17, "day", "GÜNDÜZ", "☀️", "#0EA5E9", "#22D3EE", "#10B981"),
+    (17, 22, "evening", "AKŞAM", "🌆", "#F97316", "#EC4899", "#8B5CF6"),
+    (22, 24, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+]
+
+
+def get_time_bucket():
+    local_hour = (datetime.now(timezone.utc).hour + LOCAL_UTC_OFFSET) % 24
+    for start, end, key, label, emoji, c1, c2, c3 in TIME_PALETTES:
+        if start <= local_hour < end:
+            return dict(key=key, label=label, emoji=emoji, c1=c1, c2=c2, c3=c3)
+    return dict(key="day", label="GÜNDÜZ", emoji="☀️", c1="#0EA5E9", c2="#22D3EE", c3="#10B981")
 
 # Used only if the GitHub API can't be reached (e.g. no network in this
 # sandbox). Kept intentionally close to the original static bullets so we
@@ -99,8 +117,9 @@ THEMES = {
 }
 
 
-def build_svg(theme_name, repos):
-    t = THEMES[theme_name]
+def build_svg(theme_name, repos, bucket):
+    t = dict(THEMES[theme_name])
+    t["c1"], t["c2"], t["c3"] = bucket["c1"], bucket["c2"], bucket["c3"]
     w = 1180
     row_h = 54
     h = 70 + len(repos) * row_h + 20
@@ -159,6 +178,7 @@ def build_svg(theme_name, repos):
   <rect x="12" y="12" width="{w - 24}" height="{h - 24}" rx="18" fill="{t['panel']}" fill-opacity="{t['panel_op']}" stroke="{t['panel_stroke']}" stroke-opacity="{t['panel_stroke_op']}" stroke-width="1"/>
   <rect x="12" y="12" width="{w - 24}" height="{h - 24}" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
   <text x="42" y="38" font-size="11" letter-spacing="2" fill="{t['muted']}">ŞU AN ÜZERİNDE ÇALIŞTIKLARIM · en son push edilenler</text>
+  <text x="{w - 42}" y="38" text-anchor="end" font-size="12" fill="{t['muted']}">{bucket['emoji']} {bucket['label']}</text>
 {chr(10).join(rows)}
 </g>
 <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="23" fill="none" stroke="{t['outer_stroke']}" stroke-opacity="{t['outer_op']}"/>
@@ -168,8 +188,9 @@ def build_svg(theme_name, repos):
 
 def main():
     repos = fetch_repos()
+    bucket = get_time_bucket()
     for theme in ("dark", "light"):
-        svg = build_svg(theme, repos)
+        svg = build_svg(theme, repos, bucket)
         out_path = OUT_DIR / f"working-on-{theme}.svg"
         out_path.write_text(svg, encoding="utf-8")
         print(f"wrote {out_path} ({len(repos)} repos)")

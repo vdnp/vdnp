@@ -39,10 +39,6 @@
   <img alt="Live GitHub activity" src="activity-dark.svg" width="100%">
 </picture>
 
-<p align="left">
-  <img src="https://komarev.com/ghpvc/?username=vdnp&color=7C3AED&style=flat-square&label=Profil+Ziyareti" alt="Profile views" />
-</p>
-
 <br/>
 
 ### 📊 GitHub İstatistiklerim
@@ -71,6 +67,10 @@
 <br/>
 
 ### 🤝 Bana Ulaşın
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=vdnp&color=7C3AED&style=flat-square&label=Profil+Ziyareti" alt="Profile views" />
+</p>
 
 <table align="center">
   <tr>

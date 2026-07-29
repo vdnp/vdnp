@@ -10,11 +10,30 @@ import json
 import os
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 GITHUB_USERNAME = "vdnp"
 OUT_DIR = Path(__file__).resolve().parent.parent
 MAX_LANGS = 7
+LOCAL_UTC_OFFSET = 3  # Europe/Istanbul, no DST since 2016
+
+# Shared across every card so the whole profile shifts hue together.
+TIME_PALETTES = [
+    (0, 6, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+    (6, 11, "morning", "SABAH", "🌅", "#F97316", "#FBBF24", "#EC4899"),
+    (11, 17, "day", "GÜNDÜZ", "☀️", "#0EA5E9", "#22D3EE", "#10B981"),
+    (17, 22, "evening", "AKŞAM", "🌆", "#F97316", "#EC4899", "#8B5CF6"),
+    (22, 24, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+]
+
+
+def get_time_bucket():
+    local_hour = (datetime.now(timezone.utc).hour + LOCAL_UTC_OFFSET) % 24
+    for start, end, key, label, emoji, c1, c2, c3 in TIME_PALETTES:
+        if start <= local_hour < end:
+            return dict(key=key, label=label, emoji=emoji, c1=c1, c2=c2, c3=c3)
+    return dict(key="day", label="GÜNDÜZ", emoji="☀️", c1="#0EA5E9", c2="#22D3EE", c3="#10B981")
 
 # GitHub linguist-style colors for common languages; unknown languages fall
 # back to a neutral grey so the bar never breaks.
@@ -28,37 +47,48 @@ LANG_COLORS = {
 }
 
 
-def api_headers():
+def api_headers(token=None):
     h = {"User-Agent": "vdnp-readme-bot", "Accept": "application/vnd.github+json"}
-    if os.environ.get("GITHUB_TOKEN"):
-        h["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+    tok = token or os.environ.get("GITHUB_TOKEN")
+    if tok:
+        h["Authorization"] = f"Bearer {tok}"
     return h
 
 
-def get_json(url):
-    req = urllib.request.Request(url, headers=api_headers())
+def get_json(url, token=None):
+    req = urllib.request.Request(url, headers=api_headers(token))
     with urllib.request.urlopen(req, timeout=8) as r:
         return json.loads(r.read().decode("utf-8"))
 
 
 def fetch_language_totals():
+    # Optional personal token (repo scope, own account only) — if set, we
+    # also sum languages across private repos. Never used for the activity
+    # feed, so no private push timing ever leaks.
+    pat = os.environ.get("GH_PAT")
     totals = {}
     try:
-        repos = get_json(
-            f"https://api.github.com/users/{GITHUB_USERNAME}/repos?type=owner&per_page=100"
-        )
+        if pat:
+            repos = get_json(
+                "https://api.github.com/user/repos?affiliation=owner&per_page=100&visibility=all",
+                token=pat,
+            )
+        else:
+            repos = get_json(
+                f"https://api.github.com/users/{GITHUB_USERNAME}/repos?type=owner&per_page=100"
+            )
         for repo in repos:
             if repo.get("fork") or repo.get("archived") or repo.get("size", 0) == 0:
                 continue
             try:
-                langs = get_json(repo["languages_url"])
+                langs = get_json(repo["languages_url"], token=pat)
             except Exception:
                 continue
             for lang, byte_count in langs.items():
                 totals[lang] = totals.get(lang, 0) + byte_count
     except Exception:
-        return {}
-    return totals
+        return {}, bool(pat)
+    return totals, bool(pat)
 
 
 def top_languages(totals):
@@ -86,8 +116,9 @@ THEMES = {
 }
 
 
-def build_svg(theme_name, langs):
-    t = THEMES[theme_name]
+def build_svg(theme_name, langs, bucket, include_private=False):
+    t = dict(THEMES[theme_name])
+    t["c1"], t["c2"], t["c3"] = bucket["c1"], bucket["c2"], bucket["c3"]
     w = 1180
     bar_x, bar_y, bar_w, bar_h = 42, 76, w - 84, 22
 
@@ -148,8 +179,10 @@ def build_svg(theme_name, langs):
 <g clip-path="url(#cardClip)">
   <rect x="12" y="12" width="{w - 24}" height="{h - 24}" rx="18" fill="{t['panel']}" fill-opacity="{t['panel_op']}" stroke="{t['panel_stroke']}" stroke-opacity="{t['panel_stroke_op']}" stroke-width="1"/>
   <rect x="12" y="12" width="{w - 24}" height="{h - 24}" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
-  <text x="42" y="38" font-size="11" letter-spacing="2" fill="{t['muted']}">DİL DAĞILIMI · tüm public repolar</text>
+  <text x="42" y="38" font-size="11" letter-spacing="2" fill="{t['muted']}">DİL DAĞILIMI · {"tüm repolar (public + private)" if include_private else "tüm public repolar"}</text>
+  <text x="{w - 42}" y="38" text-anchor="end" font-size="12" fill="{t['muted']}">{bucket['emoji']} {bucket['label']}</text>
 {body}
+{f'  <text x="42" y="{h - 12}" font-size="10" fill="{t["muted"]}" opacity="0.8">🔒 private repolar dahil edildi (isim gösterilmez)</text>' if include_private else ''}
 </g>
 <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="23" fill="none" stroke="{t['outer_stroke']}" stroke-opacity="{t['outer_op']}"/>
 </svg>
@@ -157,13 +190,14 @@ def build_svg(theme_name, langs):
 
 
 def main():
-    totals = fetch_language_totals()
+    totals, include_private = fetch_language_totals()
     langs = top_languages(totals)
+    bucket = get_time_bucket()
     for theme in ("dark", "light"):
-        svg = build_svg(theme, langs)
+        svg = build_svg(theme, langs, bucket, include_private)
         out_path = OUT_DIR / f"langs-{theme}.svg"
         out_path.write_text(svg, encoding="utf-8")
-        print(f"wrote {out_path} ({len(langs)} languages)")
+        print(f"wrote {out_path} ({len(langs)} languages, private={include_private})")
 
 
 if __name__ == "__main__":

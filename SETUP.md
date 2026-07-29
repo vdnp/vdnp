@@ -62,7 +62,33 @@ kurulum gerekiyor:
 Bu üçü yoksa hero kartında sadece "Spotify henüz bağlanmadı" yazar, hiçbir
 şey bozulmaz — istediğin zaman kurabilirsin.
 
-## 4) Ziyaretçi sayacı
+## 4) Private repoları sayıma dahil etmek (opsiyonel)
+
+Varsayılan `GITHUB_TOKEN` sadece bu reponun kendisini görebiliyor, private
+repolarına erişemiyor. İstersen **stats** ve **dil dağılımı** kartlarına
+private repolarını da (sadece toplam sayı/dil oranı olarak, isim
+gösterilmeden) dahil edebilirsin. Bilinçli olarak **sadece bu iki karta**
+uygulandı — canlı aktivite ve "şu an çalıştıklarım" kartları hâlâ yalnızca
+public verinle çalışıyor, böylece private repo push zamanlaman hiçbir yerde
+görünmüyor.
+
+1. https://github.com/settings/tokens?type=beta → **Generate new token**
+   (Fine-grained token).
+2. **Resource owner**: kendi hesabın (`vdnp`) — bir organizasyon **değil**.
+   Bu önemli: token'ı sadece kendi private repolarını görecek şekilde
+   sınırlıyor, herhangi bir organizasyona ait private koda asla erişemiyor.
+3. **Repository access** → "All repositories" (ya da sadece istediklerini
+   seç).
+4. **Permissions** → sadece şunları **Read-only** yap: `Contents` ve
+   `Metadata`. Başka hiçbir izin gerekmiyor.
+5. Token'ı oluştur, değerini kopyala.
+6. Repo → **Settings → Secrets and variables → Actions** → yeni secret:
+   `PRIVATE_REPO_PAT` adıyla ekle, değerine token'ı yapıştır.
+
+Bu secret yoksa iki kart da sorunsuz şekilde sadece public verinle çalışmaya
+devam eder — hiçbir şey kırılmaz.
+
+## 5) Ziyaretçi sayacı
 
 `README.md`'deki komarev.com rozeti kurulum istemiyor, direkt çalışır.
 

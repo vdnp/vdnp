@@ -2,17 +2,17 @@
 <defs>
   <clipPath id="cardClip"><rect x="0" y="0" width="1180" height="190" rx="24"/></clipPath>
   <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#2563EB"><animate attributeName="stop-color" values="#2563EB;#06B6D4;#10B981;#2563EB" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="50%" stop-color="#06B6D4"><animate attributeName="stop-color" values="#06B6D4;#10B981;#2563EB;#06B6D4" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="100%" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#2563EB;#06B6D4;#10B981" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0%" stop-color="#F97316"><animate attributeName="stop-color" values="#F97316;#EC4899;#8B5CF6;#F97316" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="50%" stop-color="#EC4899"><animate attributeName="stop-color" values="#EC4899;#8B5CF6;#F97316;#EC4899" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="#8B5CF6"><animate attributeName="stop-color" values="#8B5CF6;#F97316;#EC4899;#8B5CF6" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#2563EB" stop-opacity="0.28"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#F97316" stop-opacity="0.28"/><stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="borderShimmer" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="100" y2="0">
-    <stop offset="0%" stop-color="#2563EB" stop-opacity="0"/>
-    <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.9"/>
-    <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#EC4899" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1480 0;0 0" dur="7s" repeatCount="indefinite"/>
   </linearGradient>
 </defs>
@@ -22,41 +22,43 @@
   <rect x="12" y="12" width="1156" height="166" rx="18" fill="#F8FAFC" fill-opacity="0.8" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1"/>
   <rect x="12" y="12" width="1156" height="166" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
   <text x="42" y="38" font-size="11" letter-spacing="2" fill="#475569">GITHUB İSTATİSTİKLERİM · github.com/vdnp</text>
+  <text x="1138" y="38" text-anchor="end" font-size="12" fill="#475569">🌆 AKŞAM</text>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.20s" fill="freeze"/>
     <text x="133.3" y="70" text-anchor="middle" font-size="20">📦</text>
-    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">16</text>
+    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="133.3" y="136" text-anchor="middle" font-size="12" fill="#475569">Public Repos</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.32s" fill="freeze"/>
     <text x="316.0" y="70" text-anchor="middle" font-size="20">⭐</text>
-    <text x="316.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">7</text>
+    <text x="316.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="316.0" y="136" text-anchor="middle" font-size="12" fill="#475569">Toplam Yıldız</text>
   </g>
   <line x1="224.7" y1="56" x2="224.7" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.44s" fill="freeze"/>
     <text x="498.7" y="70" text-anchor="middle" font-size="20">👥</text>
-    <text x="498.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">11</text>
+    <text x="498.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="498.7" y="136" text-anchor="middle" font-size="12" fill="#475569">Takipçi</text>
   </g>
   <line x1="407.3" y1="56" x2="407.3" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.56s" fill="freeze"/>
     <text x="681.3" y="70" text-anchor="middle" font-size="20">🔀</text>
-    <text x="681.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="681.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="681.3" y="136" text-anchor="middle" font-size="12" fill="#475569">Pull Request</text>
   </g>
   <line x1="590.0" y1="56" x2="590.0" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.68s" fill="freeze"/>
     <text x="864.0" y="70" text-anchor="middle" font-size="20">🐛</text>
-    <text x="864.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="864.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="864.0" y="136" text-anchor="middle" font-size="12" fill="#475569">Issue</text>
   </g>
   <line x1="772.7" y1="56" x2="772.7" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.80s" fill="freeze"/>
     <text x="1046.7" y="70" text-anchor="middle" font-size="20">🍴</text>
-    <text x="1046.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="1046.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="1046.7" y="136" text-anchor="middle" font-size="12" fill="#475569">Fork Alınan</text>
   </g>
   <line x1="955.3" y1="56" x2="955.3" y2="140" stroke="#475569" stroke-opacity="0.12"/>
+
 </g>
 <rect x="1" y="1" width="1178" height="188" rx="23" fill="none" stroke="#0F172A" stroke-opacity="0.06"/>
 </svg>

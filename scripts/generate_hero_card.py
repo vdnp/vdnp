@@ -16,9 +16,30 @@ import os
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 OUT_DIR = Path(__file__).resolve().parent.parent
+LOCAL_UTC_OFFSET = 3  # Europe/Istanbul, no DST since 2016
+
+# Shared across every card (hero, stats, activity, working-on, langs) so the
+# whole profile shifts hue together — indigo at night, sunrise oranges in
+# the morning, sky blues at midday, sunset pinks in the evening.
+TIME_PALETTES = [
+    (0, 6, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+    (6, 11, "morning", "SABAH", "🌅", "#F97316", "#FBBF24", "#EC4899"),
+    (11, 17, "day", "GÜNDÜZ", "☀️", "#0EA5E9", "#22D3EE", "#10B981"),
+    (17, 22, "evening", "AKŞAM", "🌆", "#F97316", "#EC4899", "#8B5CF6"),
+    (22, 24, "night", "GECE", "🌙", "#312E81", "#6366F1", "#7C3AED"),
+]
+
+
+def get_time_bucket():
+    local_hour = (datetime.now(timezone.utc).hour + LOCAL_UTC_OFFSET) % 24
+    for start, end, key, label, emoji, c1, c2, c3 in TIME_PALETTES:
+        if start <= local_hour < end:
+            return dict(key=key, label=label, emoji=emoji, c1=c1, c2=c2, c3=c3)
+    return dict(key="day", label="GÜNDÜZ", emoji="☀️", c1="#0EA5E9", c2="#22D3EE", c3="#10B981")
 
 
 def esc(s: str) -> str:
@@ -117,8 +138,9 @@ def build_pill_row(t, row, x0, y, begin0):
     return out
 
 
-def build_svg(theme_name, spotify):
-    t = THEMES[theme_name]
+def build_svg(theme_name, spotify, bucket):
+    t = dict(THEMES[theme_name])
+    t["c1"], t["c2"], t["c3"] = bucket["c1"], bucket["c2"], bucket["c3"]
     w, h = 1180, 380
 
     pill_state = {"seen": []}
@@ -232,6 +254,7 @@ def build_svg(theme_name, spotify):
   <circle cx="68" cy="43" r="6" fill="#FFBD2E"/>
   <circle cx="88" cy="43" r="6" fill="#27C93F"/>
   <text x="590" y="47" text-anchor="middle" fill="{t['muted']}" font-size="12" font-family="'Courier New',monospace">yigit@dev: ~</text>
+  <text x="{w - 44}" y="47" text-anchor="end" font-size="12" fill="{t['muted']}">{bucket['emoji']} {bucket['label']}</text>
 
   <text x="40" y="100" fill="{t['text']}" font-size="20" font-weight="600" opacity="0">Hi 👋<animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.2s" fill="freeze"/></text>
   <text x="40" y="138" fill="{t['text']}" font-size="29" font-weight="700" opacity="0">I'm Yiğit Enes Kaya<animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.7s" fill="freeze"/></text>
@@ -284,11 +307,12 @@ def build_svg(theme_name, spotify):
 
 def main():
     spotify = fetch_spotify()
+    bucket = get_time_bucket()
     for theme in ("dark", "light"):
-        svg = build_svg(theme, spotify)
+        svg = build_svg(theme, spotify, bucket)
         out_path = OUT_DIR / f"{theme}.svg"
         out_path.write_text(svg, encoding="utf-8")
-        print(f"wrote {out_path} :: spotify={'connected' if spotify else 'not configured'}")
+        print(f"wrote {out_path} :: spotify={'connected' if spotify else 'not configured'}, {bucket['emoji']} {bucket['label']}")
 
 
 if __name__ == "__main__":
