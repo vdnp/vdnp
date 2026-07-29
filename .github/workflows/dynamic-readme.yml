@@ -20,6 +20,16 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Hero card (dark.svg / light.svg): greeting, role rotation, skills +
+      # a live "Şu An Dinliyorum" Spotify strip. Spotify secrets are
+      # optional — falls back to "not connected" if unset (see SETUP.md).
+      - name: Generate hero card
+        run: python scripts/generate_hero_card.py
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+
       # No account/keys needed — regenerates activity-dark.svg / activity-light.svg
       - name: Generate live activity card
         run: python scripts/generate_activity_card.py
@@ -38,8 +48,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Stars/repos/followers/PRs/issues/forks via REST + Search API —
+      # regenerates stats-dark.svg / stats-light.svg (no third-party service)
+      - name: Generate GitHub stats card
+        run: python scripts/generate_stats_card.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh live activity, working-on & language cards"
-          file_pattern: "activity-dark.svg activity-light.svg working-on-dark.svg working-on-light.svg langs-dark.svg langs-light.svg"
+          commit_message: "chore: refresh hero, activity, working-on, languages & stats cards"
+          file_pattern: >-
+            dark.svg light.svg
+            activity-dark.svg activity-light.svg
+            working-on-dark.svg working-on-light.svg
+            langs-dark.svg langs-light.svg
+            stats-dark.svg stats-light.svg
