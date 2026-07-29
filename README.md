@@ -47,12 +47,13 @@
 
 ### 📊 GitHub İstatistiklerim
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="stats-light.svg">
+  <img alt="GitHub stats" src="stats-dark.svg" width="100%">
+</picture>
+
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=vdnp&show_icons=true&theme=dracula&hide_border=true&bg_color=0d1117" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=vdnp&show_icons=true&theme=gruvbox_light&hide_border=true" />
-    <img width="49%" src="https://github-readme-stats.vercel.app/api?username=vdnp&show_icons=true&theme=dracula&hide_border=true" />
-  </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vdnp&theme=dracula&hide_border=true&background=0d1117" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vdnp&theme=gruvbox-light&hide_border=true" />
@@ -71,17 +72,28 @@
 
 ### 🤝 Bana Ulaşın
 
-<p align="left">
-  <a href="https://github.com/vdnp" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://linkedin.com/in/yiğit-enes-kaaya" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:eneskaaya3@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="180">
+      <a href="https://github.com/vdnp" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /><br/>
+        <sub>Projelerime göz at</sub>
+      </a>
+    </td>
+    <td align="center" width="180">
+      <a href="https://linkedin.com/in/yiğit-enes-kaaya" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /><br/>
+        <sub>Bağlantı kur</sub>
+      </a>
+    </td>
+    <td align="center" width="180">
+      <a href="mailto:eneskaaya3@gmail.com">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /><br/>
+        <sub>E-posta gönder</sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <br/>
 

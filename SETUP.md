@@ -2,36 +2,65 @@
 
 Bu klasör `vdnp/vdnp` reponun kökünü birebir yansıtıyor — içindekileri
 doğrudan repona kopyalayabilir ya da klasörü olduğu gibi GitHub'ın
-"Upload files" sayfasına sürükleyebilirsin. Sadece GitHub'ın kendi verisini
-kullanıyor, harici hesap/API key gerekmiyor.
+"Upload files" sayfasına sürükleyebilirsin (`.github` klasörü için "yeni
+dosya oluştur" yöntemini kullanman daha garanti — ayrıca anlatıyorum).
 
-## 1) Tek gereken adım: Actions'a yazma izni ver
+## 1) Tek zorunlu adım: Actions'a yazma izni ver
 
 Repo → **Settings → Actions → General → Workflow permissions** →
 **"Read and write permissions"** seçeneğini işaretle ve kaydet. Bu olmadan
 workflow ürettiği SVG'leri commit'leyemez.
 
-## 2) Otomatik üretilen 3 kart
+## 2) Otomatik üretilen 5 kart
 
 Hepsi `scripts/` altındaki Python dosyalarıyla, GitHub'ın herkese açık REST
-API'sinden (repo listesi, `/languages`, `events/public`) besleniyor. Rate
-limit için workflow'daki hazır `GITHUB_TOKEN`'ı otomatik kullanıyorlar —
-ekstra secret eklemene gerek yok.
+API'sinden besleniyor. Rate limit için workflow'daki hazır `GITHUB_TOKEN`'ı
+otomatik kullanıyorlar — ekstra secret eklemene gerek yok (Spotify hariç,
+aşağıda anlatıyorum).
 
-| Dosya                              | İçerik                                                        |
-|-------------------------------------|----------------------------------------------------------------|
-| `working-on-dark/light.svg`         | En son push ettiğin 3 public repo (isim, açıklama, dil, yıldız)|
-| `langs-dark/light.svg`              | Tüm public repoların dil dağılımı (byte ağırlıklı, yığın bar)  |
-| `activity-dark/light.svg`           | Son commit/PR/star/fork hareketlerin + güne göre renk paleti   |
+| Dosya                              | İçerik                                                          |
+|-------------------------------------|--------------------------------------------------------------------|
+| `dark/light.svg`                    | Hero: karşılama, dönen rol yazısı, skill etiketleri, Spotify şeridi |
+| `stats-dark/light.svg`              | Repo/yıldız/takipçi/PR/issue/fork sayıları (kendi ürettiğimiz, servis değil) |
+| `working-on-dark/light.svg`         | En son push ettiğin 3 public repo                                   |
+| `langs-dark/light.svg`              | Tüm public repoların dil dağılımı                                   |
+| `activity-dark/light.svg`           | Son commit/PR/star/fork hareketlerin + güne göre renk paleti        |
 
-Her biri API'ye ulaşamazsa (rate limit, ağ sorunu) çökmeden yerel bir yedek
-içeriğe düşer, workflow hiçbir zaman kırmızıya düşmez.
+Her biri API'ye ulaşamazsa çökmeden yerel bir yedek içeriğe düşer, workflow
+hiçbir zaman kırmızıya düşmez.
 
-## 3) Otomatik çalışma sıklığı
+## 3) Spotify "Şu An Dinliyorum" (opsiyonel)
 
-Workflow her 3 saatte bir (`0 */3 * * *`) ve her `main`'e push'ta çalışıyor.
-Manuel tetiklemek için: Actions sekmesi → **"Dynamic README"** →
-**Run workflow**.
+Bu artık üçüncü parti bir servise değil, doğrudan senin kendi Spotify
+uygulamana bağlanıyor — o yüzden kapanma riski yok, ama tek seferlik bir
+kurulum gerekiyor:
+
+1. https://developer.spotify.com/dashboard → **Create app**. İsim/açıklama
+   istediğin gibi, **Redirect URI** kutusuna `http://127.0.0.1:8888/callback`
+   yaz. Kaydettikten sonra **Client ID** ve **Client Secret**'ı not al.
+2. Tarayıcıda şu adresi aç (CLIENT_ID kısmını kendi Client ID'inle değiştir):
+   ```
+   https://accounts.spotify.com/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://127.0.0.1:8888/callback&scope=user-read-currently-playing%20user-read-recently-played
+   ```
+   Spotify hesabınla giriş yapıp izin ver. Sayfa hataya düşecek (localhost'ta
+   sunucu yok, normal) ama adres çubuğundaki URL'de `?code=...` kısmını
+   kopyala.
+3. Aşağıdaki komutu **kendi bilgisayarında** çalıştır (CLIENT_ID,
+   CLIENT_SECRET, CODE'u kendi değerlerinle değiştir):
+   ```bash
+   curl -X POST https://accounts.spotify.com/api/token \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d grant_type=authorization_code \
+     -d code=CODE \
+     -d redirect_uri=http://127.0.0.1:8888/callback \
+     -u CLIENT_ID:CLIENT_SECRET
+   ```
+   Dönen JSON içindeki `refresh_token` değerini kopyala.
+4. Repo → **Settings → Secrets and variables → Actions** → şu üç secret'ı
+   ekle: `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN`.
+
+Bu üçü yoksa hero kartında sadece "Spotify henüz bağlanmadı" yazar, hiçbir
+şey bozulmaz — istediğin zaman kurabilirsin.
 
 ## 4) Ziyaretçi sayacı
 
