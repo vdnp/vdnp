@@ -1,6 +1,6 @@
-<svg width="1180" height="212" viewBox="0 0 1180 212" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+<svg width="1180" height="276" viewBox="0 0 1180 276" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
 <defs>
-  <clipPath id="cardClip"><rect x="0" y="0" width="1180" height="212" rx="24"/></clipPath>
+  <clipPath id="cardClip"><rect x="0" y="0" width="1180" height="276" rx="24"/></clipPath>
   <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#F97316"><animate attributeName="stop-color" values="#F97316;#EC4899;#8B5CF6;#F97316" dur="8s" repeatCount="indefinite"/></stop>
     <stop offset="50%" stop-color="#EC4899"><animate attributeName="stop-color" values="#EC4899;#8B5CF6;#F97316;#EC4899" dur="8s" repeatCount="indefinite"/></stop>
@@ -19,16 +19,16 @@
     <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1480 0;0 0" dur="7s" repeatCount="indefinite"/>
   </linearGradient>
 </defs>
-<rect width="1180" height="212" rx="24" fill="#FFFFFF"/>
+<rect width="1180" height="276" rx="24" fill="#FFFFFF"/>
 <g clip-path="url(#cardClip)">
   <circle cx="110" cy="20" r="140" fill="url(#glow1)">
     <animateTransform attributeName="transform" type="translate" values="0,0; 20,10; -8,15; 0,0" dur="14s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="1060" cy="192" r="160" fill="url(#glow2)">
+  <circle cx="1060" cy="256" r="160" fill="url(#glow2)">
     <animateTransform attributeName="transform" type="translate" values="0,0; -15,-10; 10,8; 0,0" dur="16s" repeatCount="indefinite"/>
   </circle>
-  <rect x="12" y="12" width="1156" height="188" rx="18" fill="#F8FAFC" fill-opacity="0.8" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1"/>
-  <rect x="12" y="12" width="1156" height="188" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
+  <rect x="12" y="12" width="1156" height="252" rx="18" fill="#F8FAFC" fill-opacity="0.8" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="12" y="12" width="1156" height="252" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
   <circle cx="44" cy="38" r="5" fill="#8B5CF6">
     <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>
   </circle>
@@ -36,16 +36,29 @@
   <text x="1136" y="43" text-anchor="end" font-size="12" fill="#475569">🌆 AKŞAM</text>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.25s" fill="freeze"/>
     <circle cx="44" cy="83" r="4" fill="#EC4899"/>
-    <text x="60" y="88" font-size="14" fill="#0F172A">React Native + Django ile filo yönetim platformu üzerinde çalışıyor</text>
+    <text x="60" y="88" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/vdnp</text>
+    <text x="1136" y="88" text-anchor="end" font-size="12" fill="#475569">6dk önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.47s" fill="freeze"/>
-    <circle cx="44" cy="115" r="4" fill="#EC4899"/>
-    <text x="60" y="120" font-size="14" fill="#0F172A">Şu anki odak: Fleet Management &amp; B2B2C</text>
+    <circle cx="44" cy="115" r="4" fill="#F97316"/>
+    <text x="60" y="120" font-size="14" fill="#0F172A">yeni branch oluşturuldu → vdnp/vdnp</text>
+    <text x="1136" y="120" text-anchor="end" font-size="12" fill="#475569">26dk önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.69s" fill="freeze"/>
-    <circle cx="44" cy="147" r="4" fill="#8B5CF6"/>
-    <text x="60" y="152" font-size="14" fill="#0F172A">vdnp/vdnp profilini güncel tutuyor</text>
+    <circle cx="44" cy="147" r="4" fill="#EC4899"/>
+    <text x="60" y="152" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/mini-katalog</text>
+    <text x="1136" y="152" text-anchor="end" font-size="12" fill="#475569">8g önce</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.91s" fill="freeze"/>
+    <circle cx="44" cy="179" r="4" fill="#EC4899"/>
+    <text x="60" y="184" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/mini-katalog</text>
+    <text x="1136" y="184" text-anchor="end" font-size="12" fill="#475569">8g önce</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.13s" fill="freeze"/>
+    <circle cx="44" cy="211" r="4" fill="#F97316"/>
+    <text x="60" y="216" font-size="14" fill="#0F172A">yeni branch oluşturuldu → vdnp/Okuma-Takip</text>
+    <text x="1136" y="216" text-anchor="end" font-size="12" fill="#475569">12g önce</text>
   </g>
 </g>
-<rect x="1" y="1" width="1178" height="210" rx="23" fill="none" stroke="#0F172A" stroke-opacity="0.06"/>
+<rect x="1" y="1" width="1178" height="274" rx="23" fill="none" stroke="#0F172A" stroke-opacity="0.06"/>
 </svg>
