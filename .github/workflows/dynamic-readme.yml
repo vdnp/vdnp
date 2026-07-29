@@ -42,18 +42,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Sums /languages across all public repos — regenerates langs-dark.svg / langs-light.svg
+      # Sums /languages across all repos — regenerates langs-dark.svg / langs-light.svg.
+      # GH_PAT is optional: if set (fine-grained PAT, own account only), private
+      # repos are included in the language mix too. Never used by the activity
+      # or "working on" cards, so no private push timing is ever exposed.
       - name: Generate language breakdown card
         run: python scripts/generate_languages_card.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 
       # Stars/repos/followers/PRs/issues/forks via REST + Search API —
-      # regenerates stats-dark.svg / stats-light.svg (no third-party service)
+      # regenerates stats-dark.svg / stats-light.svg (no third-party service).
+      # Same optional GH_PAT as above, to also count private repos.
       - name: Generate GitHub stats card
         run: python scripts/generate_stats_card.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.PRIVATE_REPO_PAT }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
