@@ -25,36 +25,36 @@
   <text x="1138" y="38" text-anchor="end" font-size="12" fill="#475569">🌆 AKŞAM</text>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.20s" fill="freeze"/>
     <text x="133.3" y="70" text-anchor="middle" font-size="20">📦</text>
-    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">16</text>
+    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="133.3" y="136" text-anchor="middle" font-size="12" fill="#475569">Public Repos</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.32s" fill="freeze"/>
     <text x="316.0" y="70" text-anchor="middle" font-size="20">⭐</text>
-    <text x="316.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">7</text>
+    <text x="316.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="316.0" y="136" text-anchor="middle" font-size="12" fill="#475569">Toplam Yıldız</text>
   </g>
   <line x1="224.7" y1="56" x2="224.7" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.44s" fill="freeze"/>
     <text x="498.7" y="70" text-anchor="middle" font-size="20">👥</text>
-    <text x="498.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">11</text>
+    <text x="498.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="498.7" y="136" text-anchor="middle" font-size="12" fill="#475569">Takipçi</text>
   </g>
   <line x1="407.3" y1="56" x2="407.3" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.56s" fill="freeze"/>
     <text x="681.3" y="70" text-anchor="middle" font-size="20">🔀</text>
-    <text x="681.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="681.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="681.3" y="136" text-anchor="middle" font-size="12" fill="#475569">Pull Request</text>
   </g>
   <line x1="590.0" y1="56" x2="590.0" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.68s" fill="freeze"/>
     <text x="864.0" y="70" text-anchor="middle" font-size="20">🐛</text>
-    <text x="864.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="864.0" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="864.0" y="136" text-anchor="middle" font-size="12" fill="#475569">Issue</text>
   </g>
   <line x1="772.7" y1="56" x2="772.7" y2="140" stroke="#475569" stroke-opacity="0.12"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.80s" fill="freeze"/>
     <text x="1046.7" y="70" text-anchor="middle" font-size="20">🍴</text>
-    <text x="1046.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">0</text>
+    <text x="1046.7" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">—</text>
     <text x="1046.7" y="136" text-anchor="middle" font-size="12" fill="#475569">Fork Alınan</text>
   </g>
   <line x1="955.3" y1="56" x2="955.3" y2="140" stroke="#475569" stroke-opacity="0.12"/>

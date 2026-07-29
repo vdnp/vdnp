@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Generate the profile hero card (dark.svg / light.svg): greeting, typing
 role rotation, quick info, skill pills — plus a live 'Şu An Dinliyorum'
-Spotify strip at the bottom (via the user's own Spotify Web API app, not
-any third-party proxy, since those tend to shut down).
+Spotify block under the SKILLS column, with the track's cover art (via the
+user's own Spotify Web API app, not any third-party proxy, since those tend
+to shut down).
 
-If Spotify secrets aren't configured (or the API call fails), the strip
-falls back to a neutral "not connected" line instead of breaking the card.
+If Spotify secrets aren't configured (or the API call fails), the block
+falls back to a neutral "not connected" placeholder instead of breaking the card.
 
 Run manually:  python scripts/generate_hero_card.py
 Run by CI:     see .github/workflows/dynamic-readme.yml
@@ -48,6 +49,32 @@ def esc(s: str) -> str:
 
 # ---------------------------------------------------------------- Spotify --
 
+MAX_COVER_BYTES = 300_000  # guard against an unexpectedly huge response bloating the SVG
+
+
+def fetch_cover(item):
+    """Download the smallest available album cover and base64-encode it, so
+    the SVG stays fully self-contained (no external image fetch needed when
+    someone actually views the README)."""
+    try:
+        images = (item.get("album") or {}).get("images") or []
+        if not images:
+            return None, None
+        img_url = images[-1]["url"]  # last = smallest (usually ~64x64)
+        if not img_url.startswith("https://"):
+            return None, None
+        img_req = urllib.request.Request(img_url, headers={"User-Agent": "vdnp-readme-bot"})
+        with urllib.request.urlopen(img_req, timeout=8) as r:
+            mime = r.headers.get_content_type() or "image/jpeg"
+            raw = r.read(MAX_COVER_BYTES + 1)
+            if len(raw) > MAX_COVER_BYTES:
+                return None, None
+            data = base64.b64encode(raw).decode()
+            return data, mime
+    except Exception:
+        return None, None
+
+
 def fetch_spotify():
     cid = os.environ.get("SPOTIFY_CLIENT_ID")
     secret = os.environ.get("SPOTIFY_CLIENT_SECRET")
@@ -74,8 +101,10 @@ def fetch_spotify():
                     data = json.loads(body)
                     if data and data.get("is_playing") and data.get("item"):
                         item = data["item"]
+                        cover_b64, cover_mime = fetch_cover(item)
                         return dict(playing=True, track=item["name"],
-                                    artist=", ".join(a["name"] for a in item["artists"]))
+                                    artist=", ".join(a["name"] for a in item["artists"]),
+                                    cover_b64=cover_b64, cover_mime=cover_mime)
         except urllib.error.HTTPError:
             pass
 
@@ -85,8 +114,10 @@ def fetch_spotify():
             items = data.get("items", [])
             if items:
                 item = items[0]["track"]
+                cover_b64, cover_mime = fetch_cover(item)
                 return dict(playing=False, track=item["name"],
-                            artist=", ".join(a["name"] for a in item["artists"]))
+                            artist=", ".join(a["name"] for a in item["artists"]),
+                            cover_b64=cover_b64, cover_mime=cover_mime)
     except Exception:
         pass
     return None
@@ -141,7 +172,8 @@ def build_pill_row(t, row, x0, y, begin0):
 def build_svg(theme_name, spotify, bucket):
     t = dict(THEMES[theme_name])
     t["c1"], t["c2"], t["c3"] = bucket["c1"], bucket["c2"], bucket["c3"]
-    w, h = 1180, 380
+    w, h = 1180, 360
+    panel_h = h - 48
 
     pill_state = {"seen": []}
     rows = []
@@ -150,33 +182,61 @@ def build_svg(theme_name, spotify, bucket):
     rows += build_pill_row(t, SKILLS_ROW3, 600, 192, pill_state)
     pills_svg = "\n".join(rows)
 
+    # --- "Şu An Dinliyorum" block: sits under the SKILLS column, mirroring
+    # the quick-info block on the left. Cover art is embedded as a base64
+    # data URI (fetched once at build time) so the card stays self-contained.
+    sp_x = 600
+    cover_size = 46
+    cover_x, cover_y = sp_x, 258
+    text_x = cover_x + cover_size + 14
+
     if spotify:
         verb = "Şu an dinliyor" if spotify["playing"] else "Son dinlediği"
         track = spotify["track"]
-        if len(track) > 40:
-            track = track[:39].rstrip() + "…"
+        if len(track) > 34:
+            track = track[:33].rstrip() + "…"
         artist = spotify["artist"]
-        if len(artist) > 30:
-            artist = artist[:29].rstrip() + "…"
-        spotify_text = f'{verb}: <tspan fill="{t["text"]}" font-weight="700">{esc(track)}</tspan> — {esc(artist)}'
-        bars_anim = True
-    else:
-        spotify_text = "Spotify henüz bağlanmadı"
-        bars_anim = False
+        if len(artist) > 34:
+            artist = artist[:33].rstrip() + "…"
 
-    bars = ""
-    if bars_anim:
-        bar_specs = [(0, "0.9s"), (5, "0.7s"), (10, "1.1s")]
-        bar_svgs = []
-        for dx, dur in bar_specs:
-            bar_svgs.append(
-                f'<rect x="{40 + dx}" y="342" width="3" height="10" fill="url(#accentGrad)">'
-                f'<animate attributeName="height" values="6;16;6" dur="{dur}" repeatCount="indefinite"/>'
-                f'<animate attributeName="y" values="345;337;345" dur="{dur}" repeatCount="indefinite"/></rect>'
+        if spotify.get("cover_b64"):
+            cover_svg = (
+                f'<image x="{cover_x}" y="{cover_y}" width="{cover_size}" height="{cover_size}" '
+                f'clip-path="url(#coverClip)" preserveAspectRatio="xMidYMid slice" '
+                f'href="data:{spotify["cover_mime"]};base64,{spotify["cover_b64"]}"/>'
             )
-        bars = "".join(bar_svgs)
+        else:
+            cover_svg = (
+                f'<rect x="{cover_x}" y="{cover_y}" width="{cover_size}" height="{cover_size}" rx="10" fill="{t["muted"]}" fill-opacity="0.15"/>'
+                f'<text x="{cover_x + cover_size / 2}" y="{cover_y + cover_size / 2 + 5}" text-anchor="middle" font-size="18" fill="{t["muted"]}">♪</text>'
+            )
+
+        dot = ""
+        if spotify["playing"]:
+            dot = (
+                f'<circle cx="{cover_x + cover_size + 6}" cy="{cover_y + 6}" r="4" fill="{t["c3"]}">'
+                f'<animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>'
+            )
+
+        spotify_block = (
+            f'    <line x1="{sp_x}" y1="238" x2="1140" y2="238" stroke="{t["muted"]}" stroke-opacity="0.15"/>\n'
+            f'    <text x="{sp_x}" y="252" fill="{t["muted"]}" font-size="12">🎧 {verb}</text>\n'
+            f'    {cover_svg}\n'
+            f'    {dot}\n'
+            f'    <text x="{text_x}" y="{cover_y + 19}" font-size="14" font-weight="700" fill="{t["text"]}">{esc(track)}</text>\n'
+            f'    <text x="{text_x}" y="{cover_y + 37}" font-size="12.5" fill="{t["muted"]}">{esc(artist)}</text>'
+        )
     else:
-        bars = f'<circle cx="47" cy="347" r="3" fill="{t["muted"]}"/>'
+        cover_svg = (
+            f'<rect x="{cover_x}" y="{cover_y}" width="{cover_size}" height="{cover_size}" rx="10" fill="{t["muted"]}" fill-opacity="0.12"/>'
+            f'<text x="{cover_x + cover_size / 2}" y="{cover_y + cover_size / 2 + 5}" text-anchor="middle" font-size="18" fill="{t["muted"]}">♪</text>'
+        )
+        spotify_block = (
+            f'    <line x1="{sp_x}" y1="238" x2="1140" y2="238" stroke="{t["muted"]}" stroke-opacity="0.15"/>\n'
+            f'    <text x="{sp_x}" y="252" fill="{t["muted"]}" font-size="12">🎧 Spotify</text>\n'
+            f'    {cover_svg}\n'
+            f'    <text x="{text_x}" y="{cover_y + 28}" font-size="13" fill="{t["muted"]}">Spotify henüz bağlanmadı</text>'
+        )
 
     return f'''<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
 <defs>
@@ -217,6 +277,8 @@ def build_svg(theme_name, spotify, bucket):
   <clipPath id="phraseClip1"><rect x="72" y="134" width="0" height="26"><animate attributeName="width" keyTimes="0;0.25;0.30;0.499;0.5;1" values="0;0;252;252;0;0" dur="16s" repeatCount="indefinite"/></rect></clipPath>
   <clipPath id="phraseClip2"><rect x="72" y="134" width="0" height="26"><animate attributeName="width" keyTimes="0;0.5;0.55;0.749;0.75;1" values="0;0;252;252;0;0" dur="16s" repeatCount="indefinite"/></rect></clipPath>
   <clipPath id="phraseClip3"><rect x="72" y="134" width="0" height="26"><animate attributeName="width" keyTimes="0;0.75;0.8;0.999;1" values="0;0;252;252;0" dur="16s" repeatCount="indefinite"/></rect></clipPath>
+
+  <clipPath id="coverClip"><rect x="{cover_x}" y="{cover_y}" width="{cover_size}" height="{cover_size}" rx="10"/></clipPath>
 </defs>
 
 <rect width="{w}" height="{h}" rx="24" fill="{t['bg']}"/>
@@ -245,8 +307,8 @@ def build_svg(theme_name, spotify, bucket):
     <circle cx="430" cy="140" r="1.3" opacity="0.4"><animate attributeName="cy" values="140;110;140" dur="7.2s" repeatCount="indefinite" begin="2.4s"/><animate attributeName="opacity" values="0;0.5;0" dur="7.2s" repeatCount="indefinite" begin="2.4s"/></circle>
   </g>
 
-  <rect x="24" y="24" width="1132" height="332" rx="18" fill="{t['panel']}" fill-opacity="0.55" stroke="{t['panel_stroke']}" stroke-opacity="{t['panel_stroke_op']}" stroke-width="1"/>
-  <rect x="24" y="24" width="1132" height="332" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
+  <rect x="24" y="24" width="1132" height="{panel_h}" rx="18" fill="{t['panel']}" fill-opacity="0.55" stroke="{t['panel_stroke']}" stroke-opacity="{t['panel_stroke_op']}" stroke-width="1"/>
+  <rect x="24" y="24" width="1132" height="{panel_h}" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
 
   <rect x="24" y="24" width="1132" height="38" rx="18" fill="{t['header']}"/>
   <rect x="24" y="42" width="1132" height="20" fill="{t['header']}"/>
@@ -293,10 +355,8 @@ def build_svg(theme_name, spotify, bucket):
 {pills_svg}
   </g>
 
-  <line x1="40" y1="326" x2="1140" y2="326" stroke="{t['muted']}" stroke-opacity="0.15"/>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.1s" fill="freeze"/>
-    {bars}
-    <text x="60" y="350" font-size="13" fill="{t['muted']}">🎧 {spotify_text}</text>
+{spotify_block}
   </g>
 </g>
 

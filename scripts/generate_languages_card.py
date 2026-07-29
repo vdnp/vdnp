@@ -47,6 +47,10 @@ LANG_COLORS = {
 }
 
 
+def esc(s: str) -> str:
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
 def api_headers(token=None):
     h = {"User-Agent": "vdnp-readme-bot", "Accept": "application/vnd.github+json"}
     tok = token or os.environ.get("GITHUB_TOKEN")
@@ -150,7 +154,7 @@ def build_svg(theme_name, langs, bucket, include_private=False):
             legend.append(
                 f'  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="{begin + 0.15:.2f}s" fill="freeze"/>\n'
                 f'    <rect x="{lx:.1f}" y="{ly - 11}" width="11" height="11" rx="3" fill="{color}"/>\n'
-                f'    <text x="{lx + 18:.1f}" y="{ly - 1}" font-size="12.5" fill="{t["text"]}">{name} <tspan fill="{t["muted"]}">{pct:.1f}%</tspan></text>\n'
+                f'    <text x="{lx + 18:.1f}" y="{ly - 1}" font-size="12.5" fill="{t["text"]}">{esc(name)} <tspan fill="{t["muted"]}">{pct:.1f}%</tspan></text>\n'
                 '  </g>'
             )
         rows_count = (len(langs) + cols - 1) // cols
