@@ -185,13 +185,14 @@ def build_svg(theme_name, spotify, bucket):
     # --- "Şu An Dinliyorum" block: sits under the SKILLS column, mirroring
     # the quick-info block on the left. Cover art is embedded as a base64
     # data URI (fetched once at build time) so the card stays self-contained.
+    # No "Son dinlediği" label — a small animated equalizer badge on the
+    # cover corner does that job instead, only while actually playing.
     sp_x = 600
     cover_size = 46
-    cover_x, cover_y = sp_x, 258
+    cover_x, cover_y = sp_x, 264
     text_x = cover_x + cover_size + 14
 
     if spotify:
-        verb = "Şu an dinliyor" if spotify["playing"] else "Son dinlediği"
         track = spotify["track"]
         if len(track) > 34:
             track = track[:33].rstrip() + "…"
@@ -211,18 +212,26 @@ def build_svg(theme_name, spotify, bucket):
                 f'<text x="{cover_x + cover_size / 2}" y="{cover_y + cover_size / 2 + 5}" text-anchor="middle" font-size="18" fill="{t["muted"]}">♪</text>'
             )
 
-        dot = ""
+        badge = ""
         if spotify["playing"]:
-            dot = (
-                f'<circle cx="{cover_x + cover_size + 6}" cy="{cover_y + 6}" r="4" fill="{t["c3"]}">'
-                f'<animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite"/></circle>'
+            bsize = 18
+            bx, by = cover_x + cover_size - bsize + 5, cover_y + cover_size - bsize + 5
+            bar_specs = [(4, "0.7s"), (8, "0.55s"), (12, "0.85s")]
+            bars_svg = "".join(
+                f'<rect x="{bx + dx}" y="{by + bsize - 5}" width="2.4" height="4" fill="{t["c3"]}">'
+                f'<animate attributeName="height" values="3;11;3" dur="{dur}" repeatCount="indefinite"/>'
+                f'<animate attributeName="y" values="{by + bsize - 4};{by + bsize - 12};{by + bsize - 4}" dur="{dur}" repeatCount="indefinite"/></rect>'
+                for dx, dur in bar_specs
+            )
+            badge = (
+                f'<rect x="{bx}" y="{by}" width="{bsize}" height="{bsize}" rx="5" fill="{t["bg"]}" fill-opacity="0.9" '
+                f'stroke="{t["muted"]}" stroke-opacity="0.25"/>{bars_svg}'
             )
 
         spotify_block = (
             f'    <line x1="{sp_x}" y1="238" x2="1140" y2="238" stroke="{t["muted"]}" stroke-opacity="0.15"/>\n'
-            f'    <text x="{sp_x}" y="252" fill="{t["muted"]}" font-size="12">🎧 {verb}</text>\n'
             f'    {cover_svg}\n'
-            f'    {dot}\n'
+            f'    {badge}\n'
             f'    <text x="{text_x}" y="{cover_y + 19}" font-size="14" font-weight="700" fill="{t["text"]}">{esc(track)}</text>\n'
             f'    <text x="{text_x}" y="{cover_y + 37}" font-size="12.5" fill="{t["muted"]}">{esc(artist)}</text>'
         )
@@ -233,7 +242,6 @@ def build_svg(theme_name, spotify, bucket):
         )
         spotify_block = (
             f'    <line x1="{sp_x}" y1="238" x2="1140" y2="238" stroke="{t["muted"]}" stroke-opacity="0.15"/>\n'
-            f'    <text x="{sp_x}" y="252" fill="{t["muted"]}" font-size="12">🎧 Spotify</text>\n'
             f'    {cover_svg}\n'
             f'    <text x="{text_x}" y="{cover_y + 28}" font-size="13" fill="{t["muted"]}">Spotify henüz bağlanmadı</text>'
         )

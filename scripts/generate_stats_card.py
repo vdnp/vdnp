@@ -177,7 +177,6 @@ def build_svg(theme_name, stats, bucket):
   <text x="42" y="38" font-size="11" letter-spacing="2" fill="{t['muted']}">GITHUB İSTATİSTİKLERİM · github.com/{GITHUB_USERNAME}</text>
   <text x="{w - 42}" y="38" text-anchor="end" font-size="12" fill="{t['muted']}">{bucket['emoji']} {bucket['label']}</text>
 {chr(10).join(tiles)}
-{f'  <text x="42" y="{h - 12}" font-size="10" fill="{t["muted"]}" opacity="0.8">🔒 private repolar dahil edildi (isim gösterilmez)</text>' if stats.get("include_private") else ''}
 </g>
 <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="23" fill="none" stroke="{t['outer_stroke']}" stroke-opacity="{t['outer_op']}"/>
 </svg>

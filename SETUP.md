@@ -62,15 +62,20 @@ kurulum gerekiyor:
 Bu üçü yoksa hero kartında sadece "Spotify henüz bağlanmadı" yazar, hiçbir
 şey bozulmaz — istediğin zaman kurabilirsin.
 
-## 4) Private repoları sayıma dahil etmek (opsiyonel)
+## 4) Private repoları dahil etmek (opsiyonel)
 
 Varsayılan `GITHUB_TOKEN` sadece bu reponun kendisini görebiliyor, private
-repolarına erişemiyor. İstersen **stats** ve **dil dağılımı** kartlarına
-private repolarını da (sadece toplam sayı/dil oranı olarak, isim
-gösterilmeden) dahil edebilirsin. Bilinçli olarak **sadece bu iki karta**
-uygulandı — canlı aktivite ve "şu an çalıştıklarım" kartları hâlâ yalnızca
-public verinle çalışıyor, böylece private repo push zamanlaman hiçbir yerde
-görünmüyor.
+repolarına erişemiyor. İstersen **stats**, **dil dağılımı** ve **canlı
+aktivite** kartlarına private repolarını da dahil edebilirsin:
+
+- Stats/dil kartlarında sadece toplam sayı/dil oranına katkı olarak sayılır,
+  isim hiçbir zaman gösterilmez.
+- Aktivite kartında private bir repoya push/PR/issue attığında satır
+  görünür ama repo adı (ve PR/issue başlığı) **"gizli repo"** olarak
+  maskelenir — gerçek isim veya içerik hiçbir zaman yazılmaz, sadece bir
+  hareket olduğu bilgisi.
+
+"Şu an çalıştıklarım" kartı hâlâ yalnızca public repolardan besleniyor.
 
 1. https://github.com/settings/tokens?type=beta → **Generate new token**
    (Fine-grained token).

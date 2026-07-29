@@ -73,54 +73,92 @@ def relative_time(iso_str):
     return dt.strftime("%d.%m.%Y")
 
 
-def describe(event):
+PRIVATE_LABEL = "gizli repo"
+
+
+def describe(event, private_repos):
     kind = event.get("type", "")
     repo = event.get("repo", {}).get("name", "")
+    is_priv = repo in private_repos
+    display_repo = PRIVATE_LABEL if is_priv else repo
     payload = event.get("payload", {})
     ts = relative_time(event.get("created_at", ""))
 
     if kind == "PushEvent":
         n = len(payload.get("commits", []) or [])
         n = n or 1
-        return "push", f"{n} commit push edildi → {repo}", ts
+        return "push", f"{n} commit push edildi → {display_repo}", ts
     if kind == "PullRequestEvent":
         action = payload.get("action", "opened")
+        verb = {"opened": "PR açıldı", "closed": "PR kapatıldı", "reopened": "PR yeniden açıldı"}.get(action, f"PR {action}")
+        if is_priv:
+            return "pr", f"{verb} → {display_repo}", ts
         pr = payload.get("pull_request", {})
         title = (pr.get("title") or "")[:42]
-        verb = {"opened": "PR açıldı", "closed": "PR kapatıldı", "reopened": "PR yeniden açıldı"}.get(action, f"PR {action}")
         return "pr", f"{verb}: {title} → {repo}", ts
     if kind == "WatchEvent":
-        return "star", f"yıldızlandı → {repo}", ts
+        return "star", f"yıldızlandı → {display_repo}", ts
     if kind == "CreateEvent":
         ref_type = payload.get("ref_type", "repo")
-        return "create", f"yeni {ref_type} oluşturuldu → {repo}", ts
+        return "create", f"yeni {ref_type} oluşturuldu → {display_repo}", ts
     if kind == "IssuesEvent":
         action = payload.get("action", "opened")
+        if is_priv:
+            return "issue", f"issue {action} → {display_repo}", ts
         title = (payload.get("issue", {}).get("title") or "")[:42]
         return "issue", f"issue {action}: {title} → {repo}", ts
     if kind == "ForkEvent":
-        return "fork", f"fork edildi → {repo}", ts
+        return "fork", f"fork edildi → {display_repo}", ts
     if kind == "ReleaseEvent":
-        tag = payload.get("release", {}).get("tag_name", "")
-        return "release", f"{tag} yayınlandı → {repo}", ts
+        tag = payload.get("release", {}).get("tag_name", "") if not is_priv else ""
+        label = f"{tag} yayınlandı" if tag else "yeni sürüm yayınlandı"
+        return "release", f"{label} → {display_repo}", ts
     return None
 
 
-def fetch_events():
+def api_headers(token=None):
+    h = {"User-Agent": "vdnp-readme-bot", "Accept": "application/vnd.github+json"}
+    tok = token or os.environ.get("GITHUB_TOKEN")
+    if tok:
+        h["Authorization"] = f"Bearer {tok}"
+    return h
+
+
+def get_json(url, token=None):
+    req = urllib.request.Request(url, headers=api_headers(token))
+    with urllib.request.urlopen(req, timeout=8) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def fetch_private_repo_names(pat):
+    """Names of the user's own private repos, used only to mask them in the
+    feed (never to reveal what was pushed — just that *a* private push
+    happened)."""
     try:
-        req = urllib.request.Request(
-            f"https://api.github.com/users/{GITHUB_USERNAME}/events/public?per_page=30",
-            headers={
-                "User-Agent": "vdnp-readme-bot",
-                "Accept": "application/vnd.github+json",
-                **({"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}"} if os.environ.get("GITHUB_TOKEN") else {}),
-            },
+        repos = get_json(
+            "https://api.github.com/user/repos?affiliation=owner&per_page=100&visibility=all",
+            token=pat,
         )
-        with urllib.request.urlopen(req, timeout=8) as r:
-            events = json.loads(r.read().decode("utf-8"))
+        return {r["full_name"] for r in repos if r.get("private")}
+    except Exception:
+        return set()
+
+
+def fetch_events():
+    pat = os.environ.get("GH_PAT")
+    try:
+        if pat:
+            # Authenticated as the user themselves: /events (no /public
+            # suffix) includes their private-repo activity too.
+            events = get_json(f"https://api.github.com/users/{GITHUB_USERNAME}/events?per_page=30", token=pat)
+            private_repos = fetch_private_repo_names(pat)
+        else:
+            events = get_json(f"https://api.github.com/users/{GITHUB_USERNAME}/events/public?per_page=30")
+            private_repos = set()
+
         out = []
         for e in events:
-            desc = describe(e)
+            desc = describe(e, private_repos)
             if desc:
                 out.append(desc)
             if len(out) >= MAX_EVENTS:
