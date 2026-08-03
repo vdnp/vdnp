@@ -3,28 +3,28 @@
   <clipPath id="cardClip"><rect x="0" y="0" width="1180" height="360" rx="24"/></clipPath>
 
   <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#0EA5E9"><animate attributeName="stop-color" values="#0EA5E9;#22D3EE;#10B981;#0EA5E9" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="50%" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#10B981;#0EA5E9;#22D3EE" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="100%" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#0EA5E9;#22D3EE;#10B981" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0%" stop-color="#F97316"><animate attributeName="stop-color" values="#F97316;#EC4899;#8B5CF6;#F97316" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="50%" stop-color="#EC4899"><animate attributeName="stop-color" values="#EC4899;#8B5CF6;#F97316;#EC4899" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="#8B5CF6"><animate attributeName="stop-color" values="#8B5CF6;#F97316;#EC4899;#8B5CF6" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
 
   <radialGradient id="glowViolet" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.5"/>
-    <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#F97316" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.4"/>
-    <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#EC4899" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glowEmerald" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#10B981" stop-opacity="0.35"/>
-    <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
   </radialGradient>
 
   <linearGradient id="borderShimmer" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="100" y2="0">
-    <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0"/>
-    <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.9"/>
-    <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#EC4899" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1480 0;0 0" dur="7s" repeatCount="indefinite"/>
   </linearGradient>
 
@@ -76,7 +76,7 @@
   <circle cx="68" cy="43" r="6" fill="#FFBD2E"/>
   <circle cx="88" cy="43" r="6" fill="#27C93F"/>
   <text x="590" y="47" text-anchor="middle" fill="#94A3B8" font-size="12" font-family="'Courier New',monospace">yigit@dev: ~</text>
-  <text x="1136" y="47" text-anchor="end" font-size="12" fill="#94A3B8">☀️ GÜNDÜZ</text>
+  <text x="1136" y="47" text-anchor="end" font-size="12" fill="#94A3B8">🌆 AKŞAM</text>
 
   <text x="40" y="100" fill="#F8FAFC" font-size="20" font-weight="600" opacity="0">Hi 👋<animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.2s" fill="freeze"/></text>
   <text x="40" y="138" fill="#F8FAFC" font-size="29" font-weight="700" opacity="0">I'm Yiğit Enes Kaya<animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.7s" fill="freeze"/></text>
@@ -85,19 +85,19 @@
 
   <g clip-path="url(#phraseClip0)">
     <text x="72" y="174" font-family="'Courier New',monospace" font-size="18" font-weight="600" fill="url(#accentGrad)">Full-Stack Developer</text>
-    <rect x="286" y="159" width="9" height="20" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
+    <rect x="286" y="159" width="9" height="20" fill="#EC4899"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
   </g>
   <g clip-path="url(#phraseClip1)">
     <text x="72" y="174" font-family="'Courier New',monospace" font-size="18" font-weight="600" fill="url(#accentGrad)">Fleet Management Builder</text>
-    <rect x="318" y="159" width="9" height="20" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
+    <rect x="318" y="159" width="9" height="20" fill="#EC4899"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
   </g>
   <g clip-path="url(#phraseClip2)">
     <text x="72" y="174" font-family="'Courier New',monospace" font-size="18" font-weight="600" fill="url(#accentGrad)">B2B2C Product Enthusiast</text>
-    <rect x="318" y="159" width="9" height="20" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
+    <rect x="318" y="159" width="9" height="20" fill="#EC4899"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
   </g>
   <g clip-path="url(#phraseClip3)">
     <text x="72" y="174" font-family="'Courier New',monospace" font-size="18" font-weight="600" fill="url(#accentGrad)">Open Source Contributor</text>
-    <rect x="318" y="159" width="9" height="20" fill="#22D3EE"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
+    <rect x="318" y="159" width="9" height="20" fill="#EC4899"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="0.9s" repeatCount="indefinite"/></rect>
   </g>
 
   <line x1="40" y1="196" x2="560" y2="196" stroke="#94A3B8" stroke-opacity="0.15"/>
@@ -113,69 +113,69 @@
 
   <g font-family="'Courier New',monospace" font-size="12.5" font-weight="600">
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.35s" fill="freeze"/>
-      <rect x="600" y="112" width="63" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#22D3EE" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
+      <rect x="600" y="112" width="63" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#EC4899" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
       <text x="631.5" y="132" text-anchor="middle" fill="#F8FAFC">React</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.40s" fill="freeze"/>
-      <rect x="671" y="112" width="56" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#0EA5E9" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.4s" repeatCount="indefinite"/></rect>
+      <rect x="671" y="112" width="56" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#F97316" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.4s" repeatCount="indefinite"/></rect>
       <text x="699.0" y="132" text-anchor="middle" fill="#F8FAFC">Expo</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.45s" fill="freeze"/>
-      <rect x="735" y="112" width="98" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#10B981" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.8s" repeatCount="indefinite"/></rect>
+      <rect x="735" y="112" width="98" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#8B5CF6" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.8s" repeatCount="indefinite"/></rect>
       <text x="784.0" y="132" text-anchor="middle" fill="#F8FAFC">JavaScript</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.50s" fill="freeze"/>
-      <rect x="841" y="112" width="56" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#22D3EE" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.2s" repeatCount="indefinite"/></rect>
+      <rect x="841" y="112" width="56" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#EC4899" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.2s" repeatCount="indefinite"/></rect>
       <text x="869.0" y="132" text-anchor="middle" fill="#F8FAFC">HTML</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.55s" fill="freeze"/>
-      <rect x="905" y="112" width="49" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#0EA5E9" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.6s" repeatCount="indefinite"/></rect>
+      <rect x="905" y="112" width="49" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#F97316" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.6s" repeatCount="indefinite"/></rect>
       <text x="929.5" y="132" text-anchor="middle" fill="#F8FAFC">CSS</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.60s" fill="freeze"/>
-      <rect x="600" y="152" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#10B981" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.1s" repeatCount="indefinite"/></rect>
+      <rect x="600" y="152" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#8B5CF6" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.1s" repeatCount="indefinite"/></rect>
       <text x="635.0" y="172" text-anchor="middle" fill="#F8FAFC">Python</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.65s" fill="freeze"/>
-      <rect x="678" y="152" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#22D3EE" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.9s" repeatCount="indefinite"/></rect>
+      <rect x="678" y="152" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#EC4899" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.9s" repeatCount="indefinite"/></rect>
       <text x="713.0" y="172" text-anchor="middle" fill="#F8FAFC">Django</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.70s" fill="freeze"/>
-      <rect x="756" y="152" width="77" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#0EA5E9" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.3s" repeatCount="indefinite"/></rect>
+      <rect x="756" y="152" width="77" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#F97316" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.3s" repeatCount="indefinite"/></rect>
       <text x="794.5" y="172" text-anchor="middle" fill="#F8FAFC">ASP.NET</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.75s" fill="freeze"/>
-      <rect x="841" y="152" width="42" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#10B981" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/></rect>
+      <rect x="841" y="152" width="42" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#8B5CF6" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/></rect>
       <text x="862.0" y="172" text-anchor="middle" fill="#F8FAFC">C#</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.80s" fill="freeze"/>
-      <rect x="891" y="152" width="98" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#22D3EE" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
+      <rect x="891" y="152" width="98" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#EC4899" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
       <text x="940.0" y="172" text-anchor="middle" fill="#F8FAFC">PostgreSQL</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.85s" fill="freeze"/>
-      <rect x="600" y="192" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#0EA5E9" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.2s" repeatCount="indefinite"/></rect>
+      <rect x="600" y="192" width="70" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#F97316" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.2s" repeatCount="indefinite"/></rect>
       <text x="635.0" y="212" text-anchor="middle" fill="#F8FAFC">SQLite</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.90s" fill="freeze"/>
-      <rect x="678" y="192" width="49" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#10B981" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.7s" repeatCount="indefinite"/></rect>
+      <rect x="678" y="192" width="49" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#8B5CF6" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="2.7s" repeatCount="indefinite"/></rect>
       <text x="702.5" y="212" text-anchor="middle" fill="#F8FAFC">Git</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="2.95s" fill="freeze"/>
-      <rect x="735" y="192" width="63" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#22D3EE" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.4s" repeatCount="indefinite"/></rect>
+      <rect x="735" y="192" width="63" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#EC4899" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3.4s" repeatCount="indefinite"/></rect>
       <text x="766.5" y="212" text-anchor="middle" fill="#F8FAFC">Figma</text>
     </g>
     <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="3.00s" fill="freeze"/>
-      <rect x="806" y="192" width="76" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#0EA5E9" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
+      <rect x="806" y="192" width="76" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.05" stroke="#F97316" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/></rect>
       <text x="844.0" y="212" text-anchor="middle" fill="#F8FAFC">Postman</text>
     </g>
   </g>
 
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.1s" fill="freeze"/>
     <line x1="600" y1="238" x2="1140" y2="238" stroke="#94A3B8" stroke-opacity="0.15"/>
-    <image x="600" y="264" width="46" height="46" clip-path="url(#coverClip)" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,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"/>
-    
-    <text x="660" y="283" font-size="14" font-weight="700" fill="#F8FAFC">Yaz Yaz Yaz</text>
-    <text x="660" y="301" font-size="12.5" fill="#94A3B8">mor ve ötesi</text>
+    <image x="600" y="264" width="46" height="46" clip-path="url(#coverClip)" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD//gA8Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gMTAwCv/bAEMAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhQYEhQVFP/bAEMBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAEAAQAMBEQACEQEDEQH/xAAaAAACAwEBAAAAAAAAAAAAAAAICQcGBQQC/8QANxAAAQMDAwIDBgMIAwEAAAAAAQIDBAURBgASBwghMRNBYXFRgQkiFKGRFUJiscEWIzJSojPR/8QAGQEAAwEBAQAAAAAAAAAAAAAABAYFAwIB/8QALxEAAQQBAwIFAgUFAAAAAAAAAQIDABEEEjEhQRMFUSJhcaGBQpGx8MEGMnLh8f/aAAwDAQACEQMRAD8Ajb6mMcNdRa3bWL1LjE+224ansf3OfP8AAmzP4v30g1RudMowXjyr4litXkUxNdfSakuEopeW0hJAbCx3SFFR3WNyAB4X0wP5iXMNrHG6ST+dTZQvaVnDuGczyun/ALRp9MUYqlfa88sIC7eNvjqA6+20aUeYYzh5DydSE8TOrMLIOOK5HeeYcp9RiupdbX2Wnck3HsPca3xsooWHWVURMXm3GTSxUbv0adcVB6jaJHodXXFofIMZra7Td21uclI7vRifH4qb7qT6XHcElzUCTvAVJ6iL3608hGSdUmavpVvSzKTGFjcf40BJ/MaG8NSXFJ9yf1mjHI+8a50k0b9gdOWCRinaVU1DxFvVZKv66ZfGVXmODyofkBM3DZuLg+oPlH9y9T1WjJXuRTI7EIC97EJ3EfqrSzgILrp91f6nbA3PvLN9VErPOVLZjg/iZFMZaTbx7rVbQiDpccvzH6T1kEk1BAYx406Y1T2R5kx90NuLt3ve20aIaOtQvaHBujQ3jPsPwOnYngNLpzTIK2IqAQE/vEXV+Z1AfUFLUuPDQ0AIGwi6+qjIWapyHNhMLQURllKthFr6K8NQSkuHrFfxh0Ke7aekhyj1aZQKnGnwJL0KbFdS8xJjrKHGlpN0qSodwQe4I1ZICpASakgRHKlnmctSJklVRqVWmJLsg/7OuLULk+03vqv4G2k5baAOAfpCAnTtH34vT2cVwulwQkNM0+C00QP3QhsA/wAjrHPf1uOPHqSYErcxMjnnc3dU8oNEvLr2RqSjd3ugu2H/AFGiP6daHdSteyQVH7C4QyNKL/fMnH6kaPxHVhhjaQVAQmAU/wAXmKI0qk8vfvpO8MW6PkQTIFSmM8iU5cZDTLjcxLqVyE7t5Cr32/8AHRrKRoPxDkKV3hp84xuu8lJXw3Upklxlqc3FKHnoyPLBuCLpHppZdXQoDeOKW6GpZsAcxUuWLZFemKjDe2XDZZNyb+p0xY9lsaogv13Dpllw7jmTl9BqFQXELUeIg7X09t6vgPdrt1wNkDzhDOOXUFRHAnDhOSP4NlNKq7DTb7tMmNPoakf+a1IUFbVW9Dax9+tWn3MZ0OtGiJmnajHQZp1E0fJuj+scnUdwx486jOlppSgVx5KrtFo/xIcJHttf11nlqC2gkfioSatJHpgN/TOwBWW9QLdekNl2PQojssqI7ecsbEH3/co/LTNiN9jBdfutVJH35P0ELV6UTo+o5X/2f1TQZoG40tmEtSfim5Kh+h0mpTr7oPUkfSe4qtCtY6EQfIPFUzknlVNKhyVhU5f+F1A2hlA73PxFvzOiEuBDRJG0oIxy+9pSd5PnVNCf404souNRnrJfHlOupuN4SLk/Mn3akNAPPWekuZl4+MG0neBfDoEiq1iNCjoLj0hYQgDvck2/rpgbAPwIrJbK1ADrDhqmMQcF45iY5GaTujRwl11I7rcI+8n5k6gLdLrpcMdVMpaYDY6CArW5JZfkxttlIkrKj7iRqykXRiStVWPeX3GecMhp/D9Y41EjfjtQntVENqPdp1IsoJ/hX9pI+KQfjrkt6nEknaZkBRCvKMo+lhgC6HxfkGUPt7V1iYlllR9Wmgb/APZR/TThnDsYrGP1oqP34H0E5dPSCr9R+pM1LqnqzMdwNuMRYzS1HwDiW7/1TpIZN6/8jOmE0CfObHR+sOZjAnyWmnn1U11olB3bVoWEn3Hw/XWT5HbKR0IjT4aPVZ6j+Z19ftcjyF45FaR5b7CHHCrdYEG3Yj19NTsMlbyq2EJ8UpLaB15/KD901QKWM9bqtWf8lEI+cz9pUPM9Db8/lq7kFaGbR14krw1tJd1qO0JnkiqIkLEslJZdF7jwPt92lsGMDx69IBWcLacyuqKZt5an1EW0zs32xcRXyC4qpy0gpBd3DxTYe/XSzU8b6x5/TJXaTh/SBiFcTtjwItAE58hNrKCSpwn23B0dn5inUl5W9AfSoO6aJMUZ1WZcvN+e8zrKFqdYk1BxTLh9WgdqD80gH5jUTGFN8+/6wuikACeem3lxHFuexZdSe2UlSlJf8SUpULFQHssCdaPN60HTvDcPI7LoKjxJT6tpsLNK9SqlFlJmU92JdhbCwptffx7eOpWFaFrFdZY8SKXNBHIqb3TJxOqdxxUK67tYaVILbbakd3doBJKvh3tbR2etfpHtCPD7DBSOLMrHOmfMUmM7SY7wkzlC32ns2NT8ZguK1HaZZj4QkoHJgvPQnZLy1LR99zc27k+3TEONot9onpOlNJdglBUmwcTcHXBIM07JRuIZEfrHp8vomRxhHS5CyuKpulKCLhD0IqKy4lQ9f3FJPv8AXWKgt1TbdcX/AMgbjdrBG0E7L6m4K1NUshxzz1hR9FpB2j8hrxoDQn4m6lUOJWxWVNB9AYYcDqgpK1oupsgWG0/PRSU0IOVm7kz8HU+FkWLZmzU21tmBCFRhuJJAaWFbVADw2qum49l9RM5xTKkFG5NS9gIS625rGwsS/cUZ9leVRGsKplTao0ANOO+czH3uW8SO51u6gFJdXN8d5xdNJNCa1N6f2YsSRWpzsisVhxxSYrb5CUqX/wAiPU/C5toXvLWQ0ji4Y3ipTbiuTJJ4+6EGK7jSn68ur0rIZjZXHirggtNrJ3J8wglVlJNx2BPj2Hcs7bHoFwxLDCU2efPmVHkPpxwjFoNSif3DVqvVIyjHjtwKagNPv/aClC1uAlIJFyAfEe3WBbQk7zF5OKE+riCjk2M1DAcpEKrQzGfSEOKZ3hR2qAUO4JHgfl666aWELSsiwDFFShqtMsGY8aP41JkyMicU33KkMRSCpZJ8Lq7j5DUdGRqpLe8Oewy0NT30mLxzxtUeTsvjUWixUIdeJUpx4kIaQPEqPjo5S+2jWrmBsY5fc0pFQoeS+JoPAXCU4CV+Jq1XKIrj9tt0g7iEj4e/2aXFLU/lISfmMjiEY2MoJ3PEw+iTHVVXMapU1I3NxIhbSVC43LIH8r6u5PoYA8zAvDhair2kg9T3JEri+dRI9IkGLU0K/EIcT4pPor3g6k4dqyCR+GU8rI7CEgbmYvEGf5xy5NnVis1iTP8Aw/8ApLmOKcPmH3n+WreS+ppIPUzNlSnxwaA8uJD3NGX5Bi+QzafImxagt5fnBzyQXWT7FHuOxPh46zx3g+Ca2kfNQWlabkM17IahkUhpyZucktI7rXfcsXJKjfxP/wA0USBJNET/2Q=="/>
+    <rect x="633" y="297" width="18" height="18" rx="5" fill="#030712" fill-opacity="0.9" stroke="#94A3B8" stroke-opacity="0.25"/><rect x="637" y="310" width="2.4" height="4" fill="#8B5CF6"><animate attributeName="height" values="3;11;3" dur="0.7s" repeatCount="indefinite"/><animate attributeName="y" values="311;303;311" dur="0.7s" repeatCount="indefinite"/></rect><rect x="641" y="310" width="2.4" height="4" fill="#8B5CF6"><animate attributeName="height" values="3;11;3" dur="0.55s" repeatCount="indefinite"/><animate attributeName="y" values="311;303;311" dur="0.55s" repeatCount="indefinite"/></rect><rect x="645" y="310" width="2.4" height="4" fill="#8B5CF6"><animate attributeName="height" values="3;11;3" dur="0.85s" repeatCount="indefinite"/><animate attributeName="y" values="311;303;311" dur="0.85s" repeatCount="indefinite"/></rect>
+    <text x="660" y="283" font-size="14" font-weight="700" fill="#F8FAFC">Marlon Brando</text>
+    <text x="660" y="301" font-size="12.5" fill="#94A3B8">Zeynep Bastık</text>
   </g>
 </g>
 
