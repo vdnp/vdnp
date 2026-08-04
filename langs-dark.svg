@@ -20,25 +20,25 @@
   <text x="42" y="38" font-size="11" letter-spacing="2" fill="#94A3B8">DİL DAĞILIMI · tüm repolar (public + private)</text>
   <text x="1138" y="38" text-anchor="end" font-size="12" fill="#94A3B8">☀️ GÜNDÜZ</text>
   <rect x="42" y="76" width="1096" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.06"/>
-    <rect x="42.0" y="76" width="0" height="22" fill="#f1e05a"><animate attributeName="width" values="0;482.4" dur="0.6s" begin="0.20s" fill="freeze"/></rect>
-    <rect x="524.4" y="76" width="0" height="22" fill="#3178c6"><animate attributeName="width" values="0;347.7" dur="0.6s" begin="0.32s" fill="freeze"/></rect>
-    <rect x="872.1" y="76" width="0" height="22" fill="#3572A5"><animate attributeName="width" values="0;236.1" dur="0.6s" begin="0.44s" fill="freeze"/></rect>
-    <rect x="1108.3" y="76" width="0" height="22" fill="#00B4AB"><animate attributeName="width" values="0;14.6" dur="0.6s" begin="0.56s" fill="freeze"/></rect>
-    <rect x="1122.8" y="76" width="0" height="22" fill="#563d7c"><animate attributeName="width" values="0;11.3" dur="0.6s" begin="0.68s" fill="freeze"/></rect>
+    <rect x="42.0" y="76" width="0" height="22" fill="#f1e05a"><animate attributeName="width" values="0;477.5" dur="0.6s" begin="0.20s" fill="freeze"/></rect>
+    <rect x="519.5" y="76" width="0" height="22" fill="#3178c6"><animate attributeName="width" values="0;355.4" dur="0.6s" begin="0.32s" fill="freeze"/></rect>
+    <rect x="874.9" y="76" width="0" height="22" fill="#3572A5"><animate attributeName="width" values="0;233.7" dur="0.6s" begin="0.44s" fill="freeze"/></rect>
+    <rect x="1108.6" y="76" width="0" height="22" fill="#00B4AB"><animate attributeName="width" values="0;14.4" dur="0.6s" begin="0.56s" fill="freeze"/></rect>
+    <rect x="1123.0" y="76" width="0" height="22" fill="#563d7c"><animate attributeName="width" values="0;11.2" dur="0.6s" begin="0.68s" fill="freeze"/></rect>
     <rect x="1134.2" y="76" width="0" height="22" fill="#e34c26"><animate attributeName="width" values="0;1.9" dur="0.6s" begin="0.80s" fill="freeze"/></rect>
-    <rect x="1136.0" y="76" width="0" height="22" fill="#178600"><animate attributeName="width" values="0;1.3" dur="0.6s" begin="0.92s" fill="freeze"/></rect>
+    <rect x="1136.1" y="76" width="0" height="22" fill="#178600"><animate attributeName="width" values="0;1.3" dur="0.6s" begin="0.92s" fill="freeze"/></rect>
     <rect x="1137.4" y="76" width="0" height="22" fill="#475569"><animate attributeName="width" values="0;0.6" dur="0.6s" begin="1.04s" fill="freeze"/></rect>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.35s" fill="freeze"/>
     <rect x="42.0" y="121" width="11" height="11" rx="3" fill="#f1e05a"/>
-    <text x="60.0" y="131" font-size="12.5" fill="#F8FAFC">JavaScript <tspan fill="#94A3B8">44.0%</tspan></text>
+    <text x="60.0" y="131" font-size="12.5" fill="#F8FAFC">JavaScript <tspan fill="#94A3B8">43.6%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.47s" fill="freeze"/>
     <rect x="316.0" y="121" width="11" height="11" rx="3" fill="#3178c6"/>
-    <text x="334.0" y="131" font-size="12.5" fill="#F8FAFC">TypeScript <tspan fill="#94A3B8">31.7%</tspan></text>
+    <text x="334.0" y="131" font-size="12.5" fill="#F8FAFC">TypeScript <tspan fill="#94A3B8">32.4%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.59s" fill="freeze"/>
     <rect x="590.0" y="121" width="11" height="11" rx="3" fill="#3572A5"/>
-    <text x="608.0" y="131" font-size="12.5" fill="#F8FAFC">Python <tspan fill="#94A3B8">21.5%</tspan></text>
+    <text x="608.0" y="131" font-size="12.5" fill="#F8FAFC">Python <tspan fill="#94A3B8">21.3%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.71s" fill="freeze"/>
     <rect x="864.0" y="121" width="11" height="11" rx="3" fill="#00B4AB"/>
