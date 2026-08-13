@@ -2,14 +2,14 @@
 <defs>
   <clipPath id="cardClip"><rect x="0" y="0" width="1180" height="204" rx="24"/></clipPath>
   <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color="#0EA5E9"><animate attributeName="stop-color" values="#0EA5E9;#22D3EE;#10B981;#0EA5E9" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="50%" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#10B981;#0EA5E9;#22D3EE" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="100%" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#0EA5E9;#22D3EE;#10B981" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0%" stop-color="#F97316"><animate attributeName="stop-color" values="#F97316;#EC4899;#8B5CF6;#F97316" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="50%" stop-color="#EC4899"><animate attributeName="stop-color" values="#EC4899;#8B5CF6;#F97316;#EC4899" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="#8B5CF6"><animate attributeName="stop-color" values="#8B5CF6;#F97316;#EC4899;#8B5CF6" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="borderShimmer" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="100" y2="0">
-    <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0"/>
-    <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.9"/>
-    <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#EC4899" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1480 0;0 0" dur="7s" repeatCount="indefinite"/>
   </linearGradient>
 </defs>
@@ -18,39 +18,39 @@
   <rect x="12" y="12" width="1156" height="180" rx="18" fill="#F8FAFC" fill-opacity="0.8" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1"/>
   <rect x="12" y="12" width="1156" height="180" rx="18" fill="none" stroke="url(#borderShimmer)" stroke-width="1.4"/>
   <text x="42" y="38" font-size="11" letter-spacing="2" fill="#475569">DİL DAĞILIMI · tüm repolar (public + private)</text>
-  <text x="1138" y="38" text-anchor="end" font-size="12" fill="#475569">☀️ GÜNDÜZ</text>
+  <text x="1138" y="38" text-anchor="end" font-size="12" fill="#475569">🌆 AKŞAM</text>
   <rect x="42" y="76" width="1096" height="22" rx="11" fill="#0F172A" fill-opacity="0.05"/>
-    <rect x="42.0" y="76" width="0" height="22" fill="#f1e05a"><animate attributeName="width" values="0;447.4" dur="0.6s" begin="0.20s" fill="freeze"/></rect>
-    <rect x="489.4" y="76" width="0" height="22" fill="#3178c6"><animate attributeName="width" values="0;362.7" dur="0.6s" begin="0.32s" fill="freeze"/></rect>
-    <rect x="852.1" y="76" width="0" height="22" fill="#3572A5"><animate attributeName="width" values="0;249.7" dur="0.6s" begin="0.44s" fill="freeze"/></rect>
-    <rect x="1101.8" y="76" width="0" height="22" fill="#00B4AB"><animate attributeName="width" values="0;13.4" dur="0.6s" begin="0.56s" fill="freeze"/></rect>
-    <rect x="1115.2" y="76" width="0" height="22" fill="#563d7c"><animate attributeName="width" values="0;11.1" dur="0.6s" begin="0.68s" fill="freeze"/></rect>
-    <rect x="1126.3" y="76" width="0" height="22" fill="#e34c26"><animate attributeName="width" values="0;9.9" dur="0.6s" begin="0.80s" fill="freeze"/></rect>
-    <rect x="1136.2" y="76" width="0" height="22" fill="#178600"><animate attributeName="width" values="0;1.2" dur="0.6s" begin="0.92s" fill="freeze"/></rect>
-    <rect x="1137.4" y="76" width="0" height="22" fill="#94A3B8"><animate attributeName="width" values="0;0.6" dur="0.6s" begin="1.04s" fill="freeze"/></rect>
+    <rect x="42.0" y="76" width="0" height="22" fill="#f1e05a"><animate attributeName="width" values="0;413.7" dur="0.6s" begin="0.20s" fill="freeze"/></rect>
+    <rect x="455.7" y="76" width="0" height="22" fill="#3178c6"><animate attributeName="width" values="0;373.3" dur="0.6s" begin="0.32s" fill="freeze"/></rect>
+    <rect x="829.0" y="76" width="0" height="22" fill="#3572A5"><animate attributeName="width" values="0;275.3" dur="0.6s" begin="0.44s" fill="freeze"/></rect>
+    <rect x="1104.3" y="76" width="0" height="22" fill="#00B4AB"><animate attributeName="width" values="0;12.4" dur="0.6s" begin="0.56s" fill="freeze"/></rect>
+    <rect x="1116.7" y="76" width="0" height="22" fill="#563d7c"><animate attributeName="width" values="0;10.3" dur="0.6s" begin="0.68s" fill="freeze"/></rect>
+    <rect x="1126.9" y="76" width="0" height="22" fill="#e34c26"><animate attributeName="width" values="0;9.1" dur="0.6s" begin="0.80s" fill="freeze"/></rect>
+    <rect x="1136.1" y="76" width="0" height="22" fill="#178600"><animate attributeName="width" values="0;1.1" dur="0.6s" begin="0.92s" fill="freeze"/></rect>
+    <rect x="1137.2" y="76" width="0" height="22" fill="#94A3B8"><animate attributeName="width" values="0;0.8" dur="0.6s" begin="1.04s" fill="freeze"/></rect>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.35s" fill="freeze"/>
     <rect x="42.0" y="121" width="11" height="11" rx="3" fill="#f1e05a"/>
-    <text x="60.0" y="131" font-size="12.5" fill="#0F172A">JavaScript <tspan fill="#475569">40.8%</tspan></text>
+    <text x="60.0" y="131" font-size="12.5" fill="#0F172A">JavaScript <tspan fill="#475569">37.7%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.47s" fill="freeze"/>
     <rect x="316.0" y="121" width="11" height="11" rx="3" fill="#3178c6"/>
-    <text x="334.0" y="131" font-size="12.5" fill="#0F172A">TypeScript <tspan fill="#475569">33.1%</tspan></text>
+    <text x="334.0" y="131" font-size="12.5" fill="#0F172A">TypeScript <tspan fill="#475569">34.1%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.59s" fill="freeze"/>
     <rect x="590.0" y="121" width="11" height="11" rx="3" fill="#3572A5"/>
-    <text x="608.0" y="131" font-size="12.5" fill="#0F172A">Python <tspan fill="#475569">22.8%</tspan></text>
+    <text x="608.0" y="131" font-size="12.5" fill="#0F172A">Python <tspan fill="#475569">25.1%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.71s" fill="freeze"/>
     <rect x="864.0" y="121" width="11" height="11" rx="3" fill="#00B4AB"/>
-    <text x="882.0" y="131" font-size="12.5" fill="#0F172A">Dart <tspan fill="#475569">1.2%</tspan></text>
+    <text x="882.0" y="131" font-size="12.5" fill="#0F172A">Dart <tspan fill="#475569">1.1%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.83s" fill="freeze"/>
     <rect x="42.0" y="147" width="11" height="11" rx="3" fill="#563d7c"/>
-    <text x="60.0" y="157" font-size="12.5" fill="#0F172A">CSS <tspan fill="#475569">1.0%</tspan></text>
+    <text x="60.0" y="157" font-size="12.5" fill="#0F172A">CSS <tspan fill="#475569">0.9%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.95s" fill="freeze"/>
     <rect x="316.0" y="147" width="11" height="11" rx="3" fill="#e34c26"/>
-    <text x="334.0" y="157" font-size="12.5" fill="#0F172A">HTML <tspan fill="#475569">0.9%</tspan></text>
+    <text x="334.0" y="157" font-size="12.5" fill="#0F172A">HTML <tspan fill="#475569">0.8%</tspan></text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.07s" fill="freeze"/>
     <rect x="590.0" y="147" width="11" height="11" rx="3" fill="#178600"/>
