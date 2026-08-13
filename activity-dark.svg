@@ -37,27 +37,27 @@
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.25s" fill="freeze"/>
     <circle cx="44" cy="83" r="4" fill="#FBBF24"/>
     <text x="60" y="88" font-size="14" fill="#F8FAFC">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="88" text-anchor="end" font-size="12" fill="#94A3B8">17sa önce</text>
+    <text x="1136" y="88" text-anchor="end" font-size="12" fill="#94A3B8">20sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.47s" fill="freeze"/>
     <circle cx="44" cy="115" r="4" fill="#FBBF24"/>
     <text x="60" y="120" font-size="14" fill="#F8FAFC">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="120" text-anchor="end" font-size="12" fill="#94A3B8">17sa önce</text>
+    <text x="1136" y="120" text-anchor="end" font-size="12" fill="#94A3B8">20sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.69s" fill="freeze"/>
     <circle cx="44" cy="147" r="4" fill="#FBBF24"/>
     <text x="60" y="152" font-size="14" fill="#F8FAFC">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="152" text-anchor="end" font-size="12" fill="#94A3B8">17sa önce</text>
+    <text x="1136" y="152" text-anchor="end" font-size="12" fill="#94A3B8">20sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.91s" fill="freeze"/>
     <circle cx="44" cy="179" r="4" fill="#FBBF24"/>
     <text x="60" y="184" font-size="14" fill="#F8FAFC">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="184" text-anchor="end" font-size="12" fill="#94A3B8">17sa önce</text>
+    <text x="1136" y="184" text-anchor="end" font-size="12" fill="#94A3B8">20sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.13s" fill="freeze"/>
     <circle cx="44" cy="211" r="4" fill="#F97316"/>
     <text x="60" y="216" font-size="14" fill="#F8FAFC">yeni branch oluşturuldu → vdnp/vdnp.github.io</text>
-    <text x="1136" y="216" text-anchor="end" font-size="12" fill="#94A3B8">18sa önce</text>
+    <text x="1136" y="216" text-anchor="end" font-size="12" fill="#94A3B8">20sa önce</text>
   </g>
 </g>
 <rect x="1" y="1" width="1178" height="274" rx="23" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
