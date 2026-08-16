@@ -37,7 +37,7 @@
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.25s" fill="freeze"/>
     <circle cx="44" cy="83" r="4" fill="#312E81"/>
     <text x="60" y="88" font-size="14" fill="#F8FAFC">yeni branch oluşturuldu → vdnp/IDE</text>
-    <text x="1136" y="88" text-anchor="end" font-size="12" fill="#94A3B8">22dk önce</text>
+    <text x="1136" y="88" text-anchor="end" font-size="12" fill="#94A3B8">4sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.47s" fill="freeze"/>
     <circle cx="44" cy="115" r="4" fill="#6366F1"/>
