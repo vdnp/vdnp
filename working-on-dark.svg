@@ -35,19 +35,19 @@
     <circle cx="44" cy="82" r="4" fill="url(#accentGrad)"/>
     <text x="60" y="88" font-size="16" font-weight="700" fill="#F8FAFC">vdnp</text>
     <text x="60" y="108" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
-    <text x="1136" y="88" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">Python  ·  2sa önce</text>
+    <text x="1136" y="88" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">Python  ·  3sa önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.45s" begin="0.50s" fill="freeze"/>
     <circle cx="44" cy="136" r="4" fill="url(#accentGrad)"/>
     <text x="60" y="142" font-size="16" font-weight="700" fill="#F8FAFC">IDE</text>
     <text x="60" y="162" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
-    <text x="1136" y="142" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">TypeScript  ·  20sa önce</text>
+    <text x="1136" y="142" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">TypeScript  ·  1g önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.45s" begin="0.75s" fill="freeze"/>
     <circle cx="44" cy="190" r="4" fill="url(#accentGrad)"/>
     <text x="60" y="196" font-size="16" font-weight="700" fill="#F8FAFC">vdnp.github.io</text>
     <text x="60" y="216" font-size="13" fill="#94A3B8">Açıklama eklenmemiş</text>
-    <text x="1136" y="196" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">HTML  ·  6g önce</text>
+    <text x="1136" y="196" text-anchor="end" font-size="12" font-family="'Courier New',monospace" fill="#94A3B8">HTML  ·  7g önce</text>
   </g>
 </g>
 <rect x="1" y="1" width="1178" height="250" rx="23" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
