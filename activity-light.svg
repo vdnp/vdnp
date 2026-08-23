@@ -47,17 +47,17 @@
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.69s" fill="freeze"/>
     <circle cx="44" cy="147" r="4" fill="#22D3EE"/>
     <text x="60" y="152" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="152" text-anchor="end" font-size="12" fill="#475569">10g önce</text>
+    <text x="1136" y="152" text-anchor="end" font-size="12" fill="#475569">11g önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.91s" fill="freeze"/>
     <circle cx="44" cy="179" r="4" fill="#22D3EE"/>
     <text x="60" y="184" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="184" text-anchor="end" font-size="12" fill="#475569">10g önce</text>
+    <text x="1136" y="184" text-anchor="end" font-size="12" fill="#475569">11g önce</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.13s" fill="freeze"/>
     <circle cx="44" cy="211" r="4" fill="#22D3EE"/>
     <text x="60" y="216" font-size="14" fill="#0F172A">1 commit push edildi → vdnp/vdnp.github.io</text>
-    <text x="1136" y="216" text-anchor="end" font-size="12" fill="#475569">10g önce</text>
+    <text x="1136" y="216" text-anchor="end" font-size="12" fill="#475569">11g önce</text>
   </g>
 </g>
 <rect x="1" y="1" width="1178" height="274" rx="23" fill="none" stroke="#0F172A" stroke-opacity="0.06"/>
