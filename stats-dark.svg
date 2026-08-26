@@ -25,7 +25,7 @@
   <text x="1138" y="38" text-anchor="end" font-size="12" fill="#94A3B8">🌙 GECE</text>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.20s" fill="freeze"/>
     <text x="133.3" y="70" text-anchor="middle" font-size="20">📦</text>
-    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">46</text>
+    <text x="133.3" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="url(#accentGrad)">47</text>
     <text x="133.3" y="136" text-anchor="middle" font-size="12" fill="#94A3B8">Toplam Repo</text>
   </g>
   <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.32s" fill="freeze"/>
