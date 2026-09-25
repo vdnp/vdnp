@@ -11,8 +11,6 @@
 
 <br/>
 
-### 🔭 Şu An Üzerinde Çalıştıklarım
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="working-on-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="working-on-light.svg">
@@ -20,8 +18,6 @@
 </picture>
 
 <br/>
-
-### 🧬 Dil Dağılımı
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="langs-dark.svg">
@@ -31,8 +27,6 @@
 
 <br/>
 
-### 📡 Canlı Aktivite
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="activity-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="activity-light.svg">
@@ -40,8 +34,6 @@
 </picture>
 
 <br/>
-
-### 📊 GitHub İstatistiklerim
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="stats-dark.svg">
